@@ -4,15 +4,15 @@ $_SESSION['login_status'] = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include "connection.php";
-    $usermail = $_POST['user_mail'];
-    $userpass = $_POST['pass'];
+    $adminmail = $_POST['admin_mail'];
+    $adminpass = $_POST['pass'];
 
     // Debugging statement (remove in production)
     var_dump($_POST);
 
     // Use prepared statements to prevent SQL injection
-    $stmt = $conn->prepare("SELECT userpass FROM login_table WHERE usermail = ?");
-    $stmt->bind_param("s", $usermail);
+    $stmt = $conn->prepare("SELECT adminpass FROM admin_table WHERE adminmail = ?");
+    $stmt->bind_param("s", $adminmail);
 
     $stmt->execute();
     $stmt->store_result();
@@ -25,12 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        
 
         // Verify the password against the hashed password stored in the database
-        if (password_verify($userpass, $hashed_password)) {
+        if (password_verify($adminpass, $hashed_password)) {
             $_SESSION['login_status'] = true;
-            $_SESSION['usermail'] = $usermail;
+            $_SESSION['adminmail'] = $adminmail;
             echo "Login Success";
-           
-            header("location:./index.html");
+            header("Location: ../admin/admin_portal.html");
         } else {
             echo "<h1>Invalid </h1>";
         }
