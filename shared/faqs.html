@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bike Rental System(MiniProject)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="Stylesheet" href="index.css" />
+</head>
+
+<body>
+  <div class="card text-bg-dark h-50">
+    <img src="images/bgscooter.png" class="card-img opacity-75 " alt="..." />
+    <div class="card-img-overlay">
+      <nav class="navbar navbar-expand-lg  border-body border-bottom" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Online Bike Rental</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item ms-5">
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item ms-5">
+                <a class="nav-link" href="about_us.html">About us</a>
+              </li>
+              <li class="nav-item ms-5">
+                <a class="nav-link" href="bike_listing.html">Bike Listing</a>
+              </li>
+              <li class="nav-item ms-5">
+                <a class="nav-link active" href="faqs.html">FAQs</a>
+              </li>
+              <li class="nav-item ms-5">
+                <a class="nav-link" href="contact_us.html">Contact us</a>
+              </li>
+            </ul>
+            <button type="button" class="btn navbar-text btn-outline-dark">
+              Login/Sign Up
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <section class="about_us section-padding mt-5 pt-5">
+        <div class="container">
+          <div class="section-header text-wrap text-center fw-medium">
+            <h2 class="fs-1 ">Frequently Asked Questions</h2>
+            <p class="pb-4">need help? we've got you covered</p>
+            <div class=" d-flex justify-content-center">
+              <div class="card bg-transparent border-2 border-light border-opacity-50 mx-5 " style="width: 18rem" >
+                <img src="images/orderimg.png" class="card-img-top " alt="..." />
+                <div class="card-body text-light">
+                  <h2 class="fs-4">Orders</h2>
+                </div>
+              </div>
+              <div class="card bg-transparent border-2 border-light border-opacity-50  mx-5" style="width: 18rem">
+                <img src="images/policyimg.png" class="card-img-top" alt="..." />
+                <div class="card-body text-light">
+                  <h2 class="fs-4">Terms and Policies</h2>
+                </div>
+              </div>
+              <div class="card bg-transparent border-2 border-light border-opacity-50  mx-5" style="width: 18rem">
+                <img src="images/moneyimg.png" class="card-img-top" alt="..." />
+                <div class="card-body text-light">
+                  <h2 class="fs-4">Pricing</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+   <!-- order realted question -->
+  <section class="container" data-bs-toggle="collapse" href="#order_related" role="button" aria-expanded="false"
+  aria-controls="order_related">
+    
+    <ul class="list-group list-group-flush d-flex flex-column align-items-center">
+      <l1><h2 class="fs-4">Order related questions</h2></l1>
+      <li class="list-group-item py-4  w-50" data-bs-toggle="collapse" href="#question-1" role="button" aria-expanded="false"
+        aria-controls="question-1">
+        <div class="d-flex justify-content-between">
+        <a class="link-underline text-dark link-underline-opacity-0">
+          Can I book a bike in advance?
+        </a>
+        <i class="fa fa-angle-down" aria-hidden="true"></i></div>
+        <div class="collapse" id="question-1">
+          <div class="card card-body">
+            Yes, you can book a bike in advance. We recommend booking
+            early, especially during peak seasons.
+          </div>
+        </div>
+      </li>
+
+      <li class="list-group-item py-4 w-50" data-bs-toggle="collapse" href="#question-2" role="button" aria-expanded="false"
+        aria-controls="question-2">
+        <div class="d-flex justify-content-between">
+        <a class="link-underline text-dark link-underline-opacity-0">
+          Do I need to create an account to rent a bike?
+        </a>
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </div>
+        <div class="collapse" id="question-2">
+          <div class="card card-body">
+            Yes, creating an account helps us manage your booking and provides a better service experience.
+          </div>
+        </div>
+      </li>
+
+      <li class="list-group-item py-4 w-50" data-bs-toggle="collapse" href="#question-3" role="button" aria-expanded="false"
+        aria-controls="question-3">
+        <div class="d-flex justify-content-between">
+        <a class="link-underline text-dark link-underline-opacity-0">
+          Where can I pick up the bike?
+        </a>
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </div>
+        <div class="collapse" id="question-3">
+          <div class="card card-body">
+            You can pick up the bike at our designated rental locations. The exact address will be provided in your
+            booking confirmation.
+          </div>
+        </div>
+      </li>
+
+      <li class="list-group-item py-4 w-50" data-bs-toggle="collapse" href="#question-4" role="button" aria-expanded="false"
+        aria-controls="question-4"> 
+        <div class="d-flex justify-content-between">
+        <a class="link-underline text-dark link-underline-opacity-0">
+          Can I return the bike at a different location?
+        </a>
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </div>
+        <div class="collapse" id="question-4">
+          <div class="card card-body">
+            Yes, but additional fees may apply. Please check our one-way rental policy for more information.
+          </div>
+        </div>
+      </li>
+
+      <li class="list-group-item py-4 w-50" data-bs-toggle="collapse" href="#question-5" role="button" aria-expanded="false"
+        aria-controls="question-5">
+        <div class="d-flex justify-content-between">
+        <a class="link-underline text-dark link-underline-opacity-0">
+          Do you provide locks and safety gear?
+        </a>
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </div>
+        <div class="collapse" id="question-5">
+          <div class="card card-body">
+            Yes, locks and basic safety gear such as helmets and lights are provided with your rental.
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+
+   <!-- terms and policies related questions -->
+   <section class="container">
+
+    <ul class="list-group list-group-flush d-flex flex-column align-items-center">
+      <l1><h2 class="fs-4">Terms and Policies related questions</h2></l1>
+      <li class="list-group-item py-4  w-50" data-bs-toggle="collapse" href="#question-6" role="button" aria-expanded="false"
+        aria-controls="question-6">
+        <div class="d-flex justify-content-between">
+        <a class="link-underline text-dark link-underline-opacity-0">
+          What is your policy on late returns?
+        </a>
+        <i class="fa fa-angle-down" aria-hidden="true"></i></div>
+        <div class="collapse" id="question-6">
+          <div class="card card-body">
+            Late returns may incur additional fees. Please inform us if you anticipate being late to avoid penalties.
+          </div>
+        </div>
+      </li>
+
+      <li class="list-group-item py-4 w-50" data-bs-toggle="collapse" href="#question-7" role="button" aria-expanded="false"
+        aria-controls="question-7">
+        <div class="d-flex justify-content-between">
+        <a class="link-underline text-dark link-underline-opacity-0">
+          What should I do if I lose the bike key?
+        </a>
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </div>
+        <div class="collapse" id="question-7">
+          <div class="card card-body">
+            Contact our customer service immediately. There may be a fee for a replacement key.
+          </div>
+        </div>
+      </li>
+
+      <li class="list-group-item py-4 w-50" data-bs-toggle="collapse" href="#question-8" role="button" aria-expanded="false"
+        aria-controls="question-8">
+        <div class="d-flex justify-content-between">
+        <a class="link-underline text-dark link-underline-opacity-0">
+          Are there any age restrictions for renting a bike?
+        </a>
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </div>
+        <div class="collapse" id="question-8">
+          <div class="card card-body">
+            Renters must be at least 18 years old and also they should have driving lisense. Riders under 18 must have parental consent and supervision.
+          </div>
+        </div>
+      </li>
+
+      <li class="list-group-item py-4 w-50" data-bs-toggle="collapse" href="#question-9" role="button" aria-expanded="false"
+        aria-controls="question-9"> 
+        <div class="d-flex justify-content-between">
+        <a class="link-underline text-dark link-underline-opacity-0">
+          Can I extend my rental period?
+        </a>
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </div>
+        <div class="collapse" id="question-9">
+          <div class="card card-body">
+            Yes, you can extend your rental period, subject to availability. Please contact us as soon as possible to arrange the extension.
+          </div>
+        </div>
+      </li>
+
+      <li class="list-group-item py-4 w-50" data-bs-toggle="collapse" href="#question-10" role="button" aria-expanded="false"
+        aria-controls="question-10">
+        <div class="d-flex justify-content-between">
+        <a class="link-underline text-dark link-underline-opacity-0">
+          What should I do if the bike breaks down?
+        </a>
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </div>
+        <div class="collapse" id="question-10">
+          <div class="card card-body">
+            Contact our customer service immediately. We provide roadside assistance and will help you with repairs or a replacement bike.
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+   
+  <!-- pricing related questions -->
+  <section class="container">
+
+    <ul class="list-group list-group-flush d-flex flex-column align-items-center">
+      <l1><h2 class="fs-4">Pricing related questions</h2></l1>
+      <li class="list-group-item py-4  w-50" data-bs-toggle="collapse" href="#question-11" role="button" aria-expanded="false"
+        aria-controls="question-11">
+        <div class="d-flex justify-content-between">
+        <a class="link-underline text-dark link-underline-opacity-0">
+          What payment methods do you accept?
+        </a>
+        <i class="fa fa-angle-down" aria-hidden="true"></i></div>
+        <div class="collapse" id="question-11">
+          <div class="card card-body">
+            We accept major credit cards, debit cards, and mobile payment options.
+          </div>
+        </div>
+      </li>
+
+      <li class="list-group-item py-4 w-50" data-bs-toggle="collapse" href="#question-12" role="button" aria-expanded="false"
+        aria-controls="question-12">
+        <div class="d-flex justify-content-between">
+        <a class="link-underline text-dark link-underline-opacity-0">
+          When will I be charged for the rental?
+        </a>
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </div>
+        <div class="collapse" id="question-12">
+          <div class="card card-body">
+            You will be charged at the time of booking or at the start of the rental period, depending on the rent of your selected bike and period for wich you have rented.
+          </div>
+        </div>
+      </li>
+
+      <li class="list-group-item py-4 w-50" data-bs-toggle="collapse" href="#question-13" role="button" aria-expanded="false"
+        aria-controls="question-13">
+        <div class="d-flex justify-content-between">
+        <a class="link-underline text-dark link-underline-opacity-0">
+          Can I get a refund if I cancel my booking?
+        </a>
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </div>
+        <div class="collapse" id="question-13">
+          <div class="card card-body">
+            Refund policies vary. Please check our cancellation policy for details on refunds and any applicable fees.
+          </div>
+        </div>
+      </li>
+
+      <li class="list-group-item py-4 w-50" data-bs-toggle="collapse" href="#question-14" role="button" aria-expanded="false"
+        aria-controls="question-14"> 
+        <div class="d-flex justify-content-between">
+        <a class="link-underline text-dark link-underline-opacity-0">
+          Can I get some discount or offers?
+        </a>
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </div>
+        <div class="collapse" id="question-14">
+          <div class="card card-body">
+            It depends on the season.You can get offers or discounts if there are no travelling seasons.
+          </div>
+        </div>
+      </li>
+
+      <li class="list-group-item py-4 w-50" data-bs-toggle="collapse" href="#question-15" role="button" aria-expanded="false"
+        aria-controls="question-15">
+        <div class="d-flex justify-content-between">
+        <a class="link-underline text-dark link-underline-opacity-0">
+          What are the charges if the bike is damaged or any accessories is lost?
+        </a>
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </div>
+        <div class="collapse" id="question-15">
+          <div class="card card-body">
+          It depends on the bike modal if the bike is damaged and in case of accessories it may cost from 300 rs to 500rs.
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+
+
+  <div class="border-1 border-top">
+    <!-- Footer -->
+    <footer class="text-center text-lg-start text-white" style="background-color: #000000">
+      <!-- Grid container -->
+      <div class="p-4 pb-0">
+        <!-- Section: Links -->
+        <section class="">
+          <!--Grid row-->
+          <div class="row mx-5 px-5">
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0 pe-5">
+              <h5 class="text-uppercase">FOOTER CONTENT</h5>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Molestiae modi cum ipsam ad, illo possimus laborum ut
+                reiciendis obcaecati. Ducimus, quas. Corrupti, pariatur eaque?
+                Reiciendis assumenda iusto sapiente inventore animi?
+              </p>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0 mx-5 px-5">
+              <h5 class="text-uppercase">Links</h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Link 1</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 2</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 3</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 4</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0 ms-5 ps-5">
+              <h5 class="text-uppercase">Links</h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Link 1</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 2</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 3</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 4</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </section>
+        <!-- Section: Links -->
+
+        <hr class="mb-4" />
+
+        <!-- Section: CTA -->
+        <section class="">
+          <p class="d-flex justify-content-center align-items-center">
+            <span class="me-3">Register for free</span>
+            <button type="button" class="btn btn- btn-rounded">
+              Sign up!
+            </button>
+          </p>
+        </section>
+        <!-- Section: CTA -->
+
+        <hr class="mb-4" />
+
+        <!-- Section: Social media -->
+        <section class="mb-4 text-center">
+          <!-- Facebook -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+              class="fab fa-facebook-f"></i></a>
+
+          <!-- Twitter -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+
+          <!-- Google -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+
+          <!-- Instagram -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+
+          <!-- Linkedin -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+              class="fab fa-linkedin-in"></i></a>
+
+          <!-- Github -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2020 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

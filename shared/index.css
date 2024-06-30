@@ -1,0 +1,62 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.border-rad{
+
+    border:0.2rem  solid black;
+}
+
+.bgimg{
+    background-size: cover;
+    width: 100vw;
+}
+
+.bike-section{
+    padding: 5rem 10rem;
+}
+nav{
+    position: fixed;
+}
+.carousel{
+    margin-top: -50px;
+    z-index: -1;
+}
+.carousel-item img{
+    background-size: cover;
+}
+.review{
+    @media (max-width:700px) {
+        flex-wrap: nowrap;
+    }
+}
+.review>div{
+    box-shadow: 0rem 0.3rem .3rem black;
+}
+footer{
+    background-color: black;
+    height: 70vh;
+    color: rgb(130, 130, 130);
+
+}
+footer a{
+    text-decoration: none;
+    color: white;
+}
+.main-section img{
+     background-size: contain;
+}
+.add-info-card{
+    width: 15rem;
+
+}
+
+.bike-book{
+    background-color: #A7ADAD;
+}
+.bike-book>div>div{
+   background-color:#A7ADAD ;
+}
+nav{
+    background-color: black;
+}
