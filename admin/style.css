@@ -1,0 +1,14 @@
+.side_nav{
+  width: 15rem;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  padding-right: 2rem;
+}
+.side_nav>ul{
+    list-style-type: none;
+    margin-top: 3rem;
+}
+.side_nav>ul>li{
+    padding: 1.2rem;
+}
