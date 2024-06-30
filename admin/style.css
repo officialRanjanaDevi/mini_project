@@ -1,14 +1,30 @@
+*{
+  margin: 0;
+  padding: 0;
+}
 .side_nav{
   width: 15rem;
   height: 100vh;
   background-color: black;
   color: white;
-  padding-right: 2rem;
+  padding-right: 1rem;
 }
 .side_nav>ul{
     list-style-type: none;
     margin-top: 3rem;
+    padding-left:.5rem ;
 }
-.side_nav>ul>li{
-    padding: 1.2rem;
+
+.box{
+  padding: 1rem .5rem;
+}
+i{
+  padding-right:.3rem ;
+}
+.box:hover{
+  font-weight:bold ;
+  background-position: 0px 0px;
+  background-position: 0px 0px;
+  background-image: linear-gradient(90deg, #FF8F00FF 2%, #FF8F00FF 15%, #FF8F00FF 28%, #FF7400FF 41%, #FF6C00FF 53%);color: black;
+  border-radius: 5px;
 }
