@@ -28,10 +28,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($userpass, $hashed_password)) {
             $_SESSION['login_status'] = true;
             $_SESSION['usermail'] = $usermail;
-            echo "Login Success";
-           
+
+            echo "Login Success ";
+        
             header("location:./index.html");
         } else {
+            
             echo "<h1>Invalid </h1>";
         }
     } else {

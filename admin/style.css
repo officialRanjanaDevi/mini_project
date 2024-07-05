@@ -1,6 +1,21 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+.main_section{
+  width: 100%;
+  background-color: #ededeb;
+ 
+  height: 100vh;
+}
+img{
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  border: 3px solid black;
+  
 }
 .side_nav{
   width: 15rem;
@@ -9,6 +24,7 @@
   color: white;
   padding-right: 1rem;
 }
+
 .side_nav>ul{
     list-style-type: none;
     margin-top: 3rem;
@@ -22,6 +38,50 @@ i{
   padding-right:.3rem ;
 }
 .box:hover{
+  font-weight:bold ;
+  background-position: 0px 0px;
+  background-position: 0px 0px;
+  background-image: linear-gradient(90deg, #FF8F00FF 2%, #FF8F00FF 15%, #FF8F00FF 28%, #FF7400FF 41%, #FF6C00FF 53%);color: black;
+  border-radius: 5px;
+}
+.box:active{
+  font-weight:bold ;
+  background-position: 0px 0px;
+  background-position: 0px 0px;
+  background-image: linear-gradient(90deg, #FF8F00FF 2%, #FF8F00FF 15%, #FF8F00FF 28%, #FF7400FF 41%, #FF6C00FF 53%);color: black;
+  border-radius: 5px;
+}
+.dropdown{
+  padding-left: 1rem;
+}
+.dropdown>a:hover{
+  background-color: antiquewhite;
+}
+.brand_chart{
+  height: 45vh;
+  width: 97.5%;
+  margin:0rem 1rem;
+  padding: 0rem 2rem;
+ 
+
+}
+.grid_chart{
+  height:43vh;
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  column-gap: .5rem;
+  row-gap: 1rem;
+}
+.grid_cell{
+  background-color:  rosybrown;
+}
+#chartdiv {
+  max-width: 90%;
+  max-height: 350px;
+
+}
+.act{
   font-weight:bold ;
   background-position: 0px 0px;
   background-position: 0px 0px;

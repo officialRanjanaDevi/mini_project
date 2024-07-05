@@ -36,8 +36,8 @@
                 </li>
                 <li>
 
-                    <div class="box mt-3 position-relative" data-bs-toggle="collapse" href="#Brand" role="button"
-                        aria-expanded="false" aria-controls="Brand">
+                    <div class="box mt-3 position-relative " data-bs-toggle="collapse" href="#Brand" role="button"
+                        aria-expanded="false" aria-controls="Brand" >
                         <i class="fa fa-first-order" aria-hidden="true"></i>
                         Brands
                         <i class="fa fa-caret-down position-absolute top-50 end-0 translate-middle-y"
@@ -46,10 +46,10 @@
 
 
                     <div class="collapse" id="Brand">
-                        <div class=" d-flex flex-column dropdown">
-                            <a class="link-underline-opacity-0 link-light link-opacity-75 ps-3 py-2" href="add_brand.html"> <i
+                        <div class=" d-flex flex-column dropdown ">
+                            <a class="link-underline-opacity-0 link-light link-opacity-75 ps-3 py-2" href=""> <i
                                     class="fa fa-check-square-o" aria-hidden="true"></i> Add new Brand</a>
-                            <a class="link-underline-opacity-0 link-light link-opacity-75 ps-3 py-2" href="update_brand.html"> <i
+                            <a class="link-underline-opacity-0 link-light link-opacity-75 ps-3 py-2" href=""> <i
                                     class="fa fa-pencil-square-o" aria-hidden="true"></i> Update Brand</a>
                         </div>
 
@@ -57,7 +57,7 @@
                 </li>
                 <li>
 
-                    <div class="box mt-3 position-relative" data-bs-toggle="collapse" href="#Vehicle" role="button"
+                    <div class="box mt-3 position-relative " data-bs-toggle="collapse" href="#Vehicle" role="button"
                         aria-expanded="false" aria-controls="Vehicle"><i class="fa fa-motorcycle"
                             aria-hidden="true"></i>
                         Vehicles
@@ -67,21 +67,21 @@
 
                     <div class="collapse" id="Vehicle">
                         <div class=" d-flex flex-column dropdown">
-                            <a class="link-underline-opacity-0 link-light link-opacity-75 ps-3 py-2" href="add_bike.php"> <i
+                            <a class="link-underline-opacity-0 link-light link-opacity-75 ps-3 py-2" href=""> <i
                                     class="fa fa-plus-square" aria-hidden="true"></i> Add new Vehicle</a>
-                            <a class="link-underline-opacity-0 link-light link-opacity-75 ps-3 py-2" href="update_bike.html"> <i
+                            <a class="link-underline-opacity-0 link-light link-opacity-75 ps-3 py-2" href=""> <i
                                     class="fa fa-wrench" aria-hidden="true"></i> Update Vehicle</a>
                         </div>
                     </div>
                 </li>
                 <li>
-                    <div class="box mt-3"onclick="location.href='booking.html'"><i class="fa fa-bookmark-o" aria-hidden="true"></i> Manage Booking</div>
+                    <div class="box mt-3"><i class="fa fa-bookmark-o" aria-hidden="true"></i> Manage Booking</div>
                 </li>
                 <li>
-                    <div class="box mt-3" onclick="location.href='users.html'"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Registered Users</div>
+                    <div class="box mt-3 act"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Registered Users</div>
                 </li>
                 <li>
-                    <div class="box mt-3" onclick="location.href='Contacts.html'"><i class="fa fa-phone-square" aria-hidden="true"></i> Manage Contacts</div>
+                    <div class="box mt-3"><i class="fa fa-phone-square" aria-hidden="true"></i> Manage Contacts</div>
                 </li>
 
 
@@ -115,26 +115,20 @@
                 </div>
             </nav>
 
-
-            <!-- Brand Bar chart -->
-            <div class="brand_chart"> 
-               <div id="chartdiv"></div>
-            </div>
-            <div class="grid_chart">
-                <div class ="grid_cell">Bookings</div>
-                <div class ="grid_cell">Vehicles</div>
-                <div class ="grid_cell">Users</div>
-                <div class ="grid_cell">Emails</div>
-            </div>  
+ 
+            <div class="my-2 ms-4">
+                <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a class=" link-underline-opacity-0 link-dark fw-bold " href="admin_portal.html">DashBoard</a></li>
+                      <li class="breadcrumb-item fw-bold">Brand</li>
+                      <li class="breadcrumb-item fw-bold active" aria-current="page">Add New Brand</li>
+                    </ol>
+                </nav>
+                </div>
             
         </div>
     </div>
 
-    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-    <script src="script.js"></script>
-    <!-- Chart code -->
    
 </body>
 

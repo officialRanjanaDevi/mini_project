@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       
        
-
+        echo($hashed_password);
         // Verify the password against the hashed password stored in the database
         if (password_verify($adminpass, $hashed_password)) {
             $_SESSION['login_status'] = true;
