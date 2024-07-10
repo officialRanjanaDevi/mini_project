@@ -125,8 +125,54 @@
             </nav>
             </div>
             
-            
+            <form method="post" action="add_brand.php" class="w-75 mx-auto my-5 row g-3 ">
+                <div class="col-md-4">
+                    <label for="brand_name" class="form-label">Brand name</label>
+                    <input type="text" class="form-control" id="brand_name">
+                </div>
+               
 
+                <div class=" col-md-4">
+                    <label for="brandimg" class=""> Add logo</label>
+                    <input type="file" name="brandimg" id="brandimg" class="form-control mt-2">
+                </div>
+                         
+                
+                <div class="col-md-4 mt-5">
+                    <button type="submit" class="px-5 btn btn-primary">ADD</button>
+                </div>
+            </form>
+            
+            <table class="w-75 mx-auto table table-striped table-hover">
+                <thead>
+                    <tr>
+                      <th scope="col">s.no</th>
+                      <th scope="col">Brand Name</th>
+                      <th scope="col">Brand Logo</th>
+                     
+                    </tr>
+                  </thead>
+                  <tbody class="table-group-divider">
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                     
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                       
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                       
+                      </tr>
+                  </tbody>
+              </table>
         </div>
     </div>
 
