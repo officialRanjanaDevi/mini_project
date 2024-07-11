@@ -121,15 +121,68 @@
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item"><a class=" link-underline-opacity-0 link-dark fw-bold " href="admin_portal.html">DashBoard</a></li>
                       <li class="breadcrumb-item fw-bold">Brand</li>
-                      <li class="breadcrumb-item fw-bold active" aria-current="page">Add New Brand</li>
+                      <li class="breadcrumb-item fw-bold active" aria-current="page">Update Brand</li>
                     </ol>
                 </nav>
                 </div>
+
+                <table class="w-75 mx-auto table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">S.No</th>
+                        <th scope="col">Brand Name</th>
+                        <th scope="col">Total Bikes</th>
+                        <th scope="col">Brand Logo</th>
+                        <th scope="col">Update</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <?php
+                    include "../shared/connection.php";
+                    $count = 1;
+                    $sql_result = mysqli_query($conn, "SELECT * FROM brand");
+                    while ($row = mysqli_fetch_assoc($sql_result)) {
+                        echo "<tr>
+                    <td>{$count}</td>
+                    <td>{$row['name']}</td>
+                     <td>{$row['bikes']}</td>
+                    <td><img src='{$row['logo']}' class='picture' style='width: 50px; height: 50px;'></td>
+                     <td ><button class='btn btn-primary'>update</button></td>
+                      <td><form method='POST' action='delete_brand.php'>
+                                <input type='hidden' name='name' value='{$row['name']}'>
+                                <input type='submit' class='btn btn-danger' value='Delete'>
+                            </form></td>
+                  </tr>
+                  ";
+                        $count++;
+                    }
+                    ?>
+                </tbody>
+            </table>
             
+                  <div class=" visually-hidden ">
+                    <form method="post" action="add_brand.php" enctype="multipart/form-data" class="w-75 mx-auto my-5 row g-3">
+                        <div class="col-md-4">
+                            <label for="brand_name" class="form-label">Brand name</label>
+                            <input type="text" class="form-control" id="brand_name" name="brand_name">
+                        </div>
+                
+                        <div class="col-md-4">
+                            <label for="brand_logo" class="form-label">Brand name</label>
+                            <input type="file" class="form-control" id="brand_logo" name="brand_logo">
+                        </div>
+                
+                        <div class="col-md-4 mt-5">
+                            <button type="submit" class="px-5 btn btn-primary">ADD</button>
+                        </div>
+                    </form>
+                </div>
+                
         </div>
     </div>
 
-   
+   <script src="functionalities.js"></script>
 </body>
 
 </html>
