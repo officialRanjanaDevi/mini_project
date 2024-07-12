@@ -13,17 +13,13 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-    <style>
-        #chartdiv {
-          width: 100%;
-          height: 500px;
-        }
-        </style>
+  
 </head>
 
 <body>
     <div class="d-flex ">
 
+      
         <!-- side nav starts -->
         <div class="side_nav">
 
@@ -32,12 +28,12 @@
             <h2 class="text-center fs-5">Online Bike Rental</h2>
             <ul class="list-group ">
                 <li>
-                    <div class="box"><i class="fa fa-tachometer  " aria-hidden="true"></i> DASHBOARD</div>
+                    <div class="box"><i class="fa fa-tachometer  " aria-hidden="true"></i> <a class="link-underline-opacity-0  link-light ms-1" href="admin_portal.html">DASHBOARD</a></div>
                 </li>
                 <li>
 
-                    <div class="box mt-3 position-relative act" data-bs-toggle="collapse" href="#Brand" role="button"
-                        aria-expanded="false" aria-controls="Brand" >
+                    <div class="box mt-3 position-relative" data-bs-toggle="collapse" href="#Brand" role="button"
+                        aria-expanded="false" aria-controls="Brand">
                         <i class="fa fa-first-order" aria-hidden="true"></i>
                         Brands
                         <i class="fa fa-caret-down position-absolute top-50 end-0 translate-middle-y"
@@ -46,18 +42,20 @@
 
 
                     <div class="collapse" id="Brand">
-                        <div class=" d-flex flex-column dropdown ">
-                            <a class="link-underline-opacity-0 link-light link-opacity-75 ps-3 py-2" href=""> <i
+                        <div class=" d-flex flex-column dropdown">
+                            <a class="link-underline-opacity-0 link-light link-opacity-75 ps-3 py-2" href="addbrand.php"> <i
                                     class="fa fa-check-square-o" aria-hidden="true"></i> Add new Brand</a>
-                            <a class="link-underline-opacity-0 link-light link-opacity-75 ps-3 py-2" href=""> <i
+                            <a class="link-underline-opacity-0 link-light link-opacity-75 ps-3 py-2" href="update_brand.php"> <i
                                     class="fa fa-pencil-square-o" aria-hidden="true"></i> Update Brand</a>
                         </div>
 
                     </div>
+
+
                 </li>
                 <li>
 
-                    <div class="box mt-3 position-relative " data-bs-toggle="collapse" href="#Vehicle" role="button"
+                    <div class="box mt-3 position-relative" data-bs-toggle="collapse" href="#Vehicle" role="button"
                         aria-expanded="false" aria-controls="Vehicle"><i class="fa fa-motorcycle"
                             aria-hidden="true"></i>
                         Vehicles
@@ -67,22 +65,23 @@
 
                     <div class="collapse" id="Vehicle">
                         <div class=" d-flex flex-column dropdown">
-                            <a class="link-underline-opacity-0 link-light link-opacity-75 ps-3 py-2" href=""> <i
+                            <a class="link-underline-opacity-0 link-light link-opacity-75 ps-3 py-2" href="add_bike.php"> <i
                                     class="fa fa-plus-square" aria-hidden="true"></i> Add new Vehicle</a>
-                            <a class="link-underline-opacity-0 link-light link-opacity-75 ps-3 py-2" href=""> <i
+                            <a class="link-underline-opacity-0 link-light link-opacity-75 ps-3 py-2" href="update_bike.php"> <i
                                     class="fa fa-wrench" aria-hidden="true"></i> Update Vehicle</a>
                         </div>
                     </div>
                 </li>
                 <li>
-                    <div class="box mt-3"><i class="fa fa-bookmark-o" aria-hidden="true"></i> Manage Booking</div>
+                    <div class="box mt-3"><i class="fa fa-bookmark-o" aria-hidden="true"></i><a class="link-underline-opacity-0  link-light ms-1" href="booking.html">Manage Booking</a></div>
                 </li>
                 <li>
-                    <div class="box mt-3"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Registered Users</div>
+                    <div class="box mt-3"><i class="fa fa-user-circle-o" aria-hidden="true"></i><a class="link-underline-opacity-0  link-light ms-1"  href="users.html">Registered Users</a></div>
                 </li>
                 <li>
-                    <div class="box mt-3"><i class="fa fa-phone-square" aria-hidden="true"></i> Manage Contacts</div>
+                    <div class="box mt-3"><i class="fa fa-phone-square" aria-hidden="true"></i><a class="link-underline-opacity-0  link-light ms-1"  href="contacts.html">Manage Contacts</a></div>
                 </li>
+
 
 
             </ul>
@@ -148,7 +147,10 @@
                     <td>{$row['name']}</td>
                      <td>{$row['bikes']}</td>
                     <td><img src='{$row['logo']}' class='picture' style='width: 50px; height: 50px;'></td>
-                     <td ><button class='btn btn-primary'>update</button></td>
+                     <td ><form method='POST' action='edit_brand.php'>
+                                <input type='hidden' name='name' value='{$row['name']}'>
+                                <input type='submit' class='btn btn-primary' value='Update'>
+                            </form></td>
                       <td><form method='POST' action='delete_brand.php'>
                                 <input type='hidden' name='name' value='{$row['name']}'>
                                 <input type='submit' class='btn btn-danger' value='Delete'>
@@ -161,28 +163,11 @@
                 </tbody>
             </table>
             
-                  <div class=" visually-hidden ">
-                    <form method="post" action="add_brand.php" enctype="multipart/form-data" class="w-75 mx-auto my-5 row g-3">
-                        <div class="col-md-4">
-                            <label for="brand_name" class="form-label">Brand name</label>
-                            <input type="text" class="form-control" id="brand_name" name="brand_name">
-                        </div>
-                
-                        <div class="col-md-4">
-                            <label for="brand_logo" class="form-label">Brand name</label>
-                            <input type="file" class="form-control" id="brand_logo" name="brand_logo">
-                        </div>
-                
-                        <div class="col-md-4 mt-5">
-                            <button type="submit" class="px-5 btn btn-primary">ADD</button>
-                        </div>
-                    </form>
-                </div>
+              
                 
         </div>
     </div>
 
-   <script src="functionalities.js"></script>
 </body>
 
 </html>

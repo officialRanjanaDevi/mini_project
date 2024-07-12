@@ -55,7 +55,7 @@ i{
   padding-left: 1rem;
 }
 .dropdown>a:hover{
-  background-color: antiquewhite;
+  background-color: rgb(251, 142, 0);
 }
 .brand_chart{
   height: 45vh;
@@ -88,5 +88,3 @@ i{
   background-image: linear-gradient(90deg, #FF8F00FF 2%, #FF8F00FF 15%, #FF8F00FF 28%, #FF7400FF 41%, #FF6C00FF 53%);color: black;
   border-radius: 5px;
 }
-
-  

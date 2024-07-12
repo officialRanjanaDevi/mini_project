@@ -2,15 +2,15 @@
 include "../shared/connection.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $name = $_POST['name'];
+    $id = $_POST['name'];
 
     // Prepare and bind
-    $stmt = $conn->prepare("DELETE FROM brand WHERE name = ?");
-    $stmt->bind_param("s", $name);  // "s" denotes the type string
+    $stmt = $conn->prepare("DELETE FROM bikes WHERE id= $id");
+    
 
     // Execute the statement
     if ($stmt->execute()) {
-        echo "Record deleted successfully";
+         header("Location: update_bike.php");
     } else {
         echo "Error deleting record: " . $stmt->error;
     }
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->close();
 
     // Redirect back to the manage brands page
-    header("Location: update_brand.php");
+    // header("Location: update_brand.php");
     exit();
 }
 
