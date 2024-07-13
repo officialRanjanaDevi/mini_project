@@ -1,12 +1,16 @@
+<?php
+ include "../shared/connection.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bike Rental System(MiniProject)</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+      
     <link rel="Stylesheet" href="index.css" />
 </head>
 <body>
@@ -41,38 +45,150 @@
           </div>
         </div>
       </nav>
-    <div class="container my-5">
-      <div class="card-group">
+
+
+    
+      <div class="container my-4">
+    <?php 
+    $id = $_POST['name'];
+    $stmt = $conn->prepare("SELECT * FROM bikes WHERE id=?");
+    $stmt->bind_param('i', $id); // Use parameterized query to prevent SQL injection
+    $stmt->execute();
+    $sql_result = $stmt->get_result();
+
+    while ($row = mysqli_fetch_assoc($sql_result)) {
+        echo "
+        <div class='card border-dark border-2 mb-3' style='max-width:80rem;'>
+            <div class='row g-0'>
+                <div id='carouselExampleDark' class='z-3 my-1 col-md-8 carousel carousel-dark slide' data-bs-ride='carousel'>
+                    <div class='carousel-indicators'>
+                        <button type='button' data-bs-target='#carouselExampleDark' data-bs-slide-to='0' aria-label='Slide 1'></button>
+                        <button type='button' data-bs-target='#carouselExampleDark' data-bs-slide-to='1' class='active' aria-current='true' aria-label='Slide 2'></button>
+                        <button type='button' data-bs-target='#carouselExampleDark' data-bs-slide-to='2' aria-label='Slide 3'></button>
+                    </div>
+                    <div class='carousel-inner ms-1'>
+                        <div class='carousel-item' data-bs-interval='10000'>
+                            <img class='bd-placeholder-img bd-placeholder-img-lg d-block w-100' width='800' height='600' src='{$row['img1']}' role='img' aria-label='Placeholder: First slide' preserveAspectRatio='xMidYMid slice' focusable='false'>
+                        </div>
+                        <div class='carousel-item active' data-bs-interval='2000'>
+                            <img class='bd-placeholder-img bd-placeholder-img-lg d-block w-100' width='800' height='600' src='{$row['img2']}' role='img' aria-label='Placeholder: Second slide' preserveAspectRatio='xMidYMid slice' focusable='false'>
+                        </div>
+                        <div class='carousel-item' data-bs-interval='3000'>
+                            <img class='bd-placeholder-img bd-placeholder-img-lg d-block w-100' width='800' height='600' src='{$row['img3']}' role='img' aria-label='Placeholder: Third slide' preserveAspectRatio='xMidYMid slice' focusable='false'>
+                        </div>
+                    </div>
+                    <button class='carousel-control-prev' type='button' data-bs-target='#carouselExampleDark' data-bs-slide='prev'>
+                        <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+                        <span class='visually-hidden'>Previous</span>
+                    </button>
+                    <button class='carousel-control-next' type='button' data-bs-target='#carouselExampleDark' data-bs-slide='next'>
+                        <span class='carousel-control-next-icon' aria-hidden='true'></span>
+                        <span class='visually-hidden'>Next</span>
+                    </button>
+                </div>
+                <div class='col-md-4'>
+                    <div class='card-body'>
+                        <h1 class='card-title'>{$row['title']}</h1>
+                        <div class='card-text'>
+                            <p><b>Overview:</b> {$row['overview']}</p>
+                            <p><b>Brand:</b> {$row['brand']}</p>
+                            <p><b>Model year:</b> {$row['year']}</p>
+                            <p><b>Fuel Type:</b> {$row['fuel']} <b class='ps-5'>Seat Capacity :</b> {$row['capacity']} Person</p>
+                        </div>
+                        <b>Accessories :</b>
+                        ";
+                        if ($row['Break'] == 1) {
+                            echo "<p>Anti-Lock Breaking System</p>";
+                        }
+                        if ($row['breakAssit'] == 1) {
+                            echo "<p>Break Assit</p>";
+                        }
+                        if ($row['crashSensor'] == 1) {
+                            echo "<p>Crash Sensor</p>";
+                        }
+                        if ($row['smoothHandling'] == 1) {
+                            echo "<p>Smooth Handling</p>";
+                        }
+                        if ($row['centralLocking'] == 1) {
+                            echo "<p>Central Locking</p>";
+                        }
+                        if ($row['LeatherSeats'] == 1) {
+                            echo "<p>Leather Seats</p>";
+                        }
+                        echo "
+                        <div class='d-flex justify-content-between mt-2'>
+                            <p class='btn btn-danger h-25'>{$row['rent']} INR /Day</p>
+                           <form method='POST' action='order.php'>
+                                <input type='hidden' name='name' value='{$row['id']}'>
+                                <input type='submit' class='btn btn-primary' value='Book Now'>
+                            </form>
+                        </div>
+                        <a href='order.php' class='btn btn-warning w-100 mt-2'>Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>";
+    }
+    ?>
+</div>
+
+
+      
+
+
+      <div class="container  my-5">
+      <h2 class="text-center" >Similar Bikes</h2>
+        <div class='card-group my-5'>
         <?php
-        include "../shared/connection.php";
+      
         $count = 1;
         $sql_result = mysqli_query($conn, "SELECT * FROM bikes");
         while ($row = mysqli_fetch_assoc($sql_result)) {
-            if($count==8){
-                break;
-            }
             echo "
+           
                 <div class='col'>
-                    <div class='card border-2 border-black' style='width: 18rem; height:25rem;'>
-                        <img src='{$row['img1']}' class='card-img-top' alt='...'>
+
+                    <div class='card border-2 border-black' style='width: 18rem; height:30rem;'>
+                          
+                         <img src='{$row['img1']}' class='card-img-top' alt='...'>
                         <div class='card-body '>
                             <h5 class='card-title'>{$row['title']}</h5>
-                            <p class='card-text'>{$row['overview']}</p>
-                            <div class='d-flex justify-content-evenly'>
-                            <p class='btn btn-danger '>{$row['rent']} INR /Day</p>
-                            <a href='signup.html' class='btn btn-primary h-50 '>Book Now</a>
+                            <div class='card-text'>
+                            <p >{$row['overview']}</p>
+                        
+                            <p ><b>Fuel Type:</b> {$row['fuel']} <b class='ms-4'>Capacity :</b>{$row['capacity']}</p>
+                            </div>
+                            
+                            <form method='POST' action='view.php'>
+                                <input type='hidden' name='name' value='{$row['id']}'>
+                                <input type='submit' class='my-2 btn btn-sm btn-warning w-100' value='View more details'>
+                            </form>
+                            <div class='d-flex justify-content-between'>
+                            <p class='btn btn-danger  h-25'>{$row['rent']} INR /Day</p>
+                           <form method='POST' action='order.php'>
+                                <input type='hidden' name='name' value='{$row['id']}'>
+                                <input type='submit' class='btn btn-primary' value='Book Now'>
+                            </form>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                
             ";
-            $count++;
+            
         }
         ?>
         
     </div>
     </div>
 
+     
+
+    <!-- carousel starts -->
+ 
+
+  <!-- carousal ends -->
 
       <!--footer  starts-->
       <div class="border-1 border-top">
@@ -194,5 +310,9 @@
         </footer>
         <!-- Footer -->
       </div>
+ 
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+

@@ -13,7 +13,7 @@ $stmt = $conn->prepare("INSERT INTO login_table (usermail, userpass) VALUES (?, 
 $stmt->bind_param("ss", $usermail, $hashed_pass);
 
 if ($stmt->execute()) {
-    echo "User Signup Success";
+    header("location:../client/home.php");
 } else {
     echo "Signup Failed: " . $stmt->error;
 }

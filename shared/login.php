@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             echo "Login Success ";
         
-            header("location:./index.html");
+            header("location:../client/home.php");
         } else {
             
             echo "<h1>Invalid </h1>";

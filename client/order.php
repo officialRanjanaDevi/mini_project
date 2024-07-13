@@ -1,12 +1,35 @@
+<?php
+include "../shared/connection.php";
+include "authentication.php";
+
+$stmt = $conn->prepare("SELECT * FROM registered_user WHERE mail = ?");
+    $stmt->bind_param("s",  $_SESSION['usermail']);
+   
+    $stmt->execute();
+    $stmt->store_result();
+
+    if ($stmt->num_rows > 0) {
+        // if the client is registered then he can book bikes else he has to first fill the neccassry details in user.php;    
+ 
+    } else {
+        header("location:user.php");
+    }
+
+    $stmt->close();
+    
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bike Rental System(MiniProject)</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+      
     <link rel="Stylesheet" href="index.css" />
 </head>
 <body>
@@ -41,38 +64,101 @@
           </div>
         </div>
       </nav>
-    <div class="container my-5">
-      <div class="card-group">
-        <?php
-        include "../shared/connection.php";
-        $count = 1;
-        $sql_result = mysqli_query($conn, "SELECT * FROM bikes");
-        while ($row = mysqli_fetch_assoc($sql_result)) {
-            if($count==8){
-                break;
-            }
-            echo "
-                <div class='col'>
-                    <div class='card border-2 border-black' style='width: 18rem; height:25rem;'>
-                        <img src='{$row['img1']}' class='card-img-top' alt='...'>
-                        <div class='card-body '>
-                            <h5 class='card-title'>{$row['title']}</h5>
-                            <p class='card-text'>{$row['overview']}</p>
-                            <div class='d-flex justify-content-evenly'>
-                            <p class='btn btn-danger '>{$row['rent']} INR /Day</p>
-                            <a href='signup.html' class='btn btn-primary h-50 '>Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            ";
-            $count++;
-        }
-        ?>
-        
+     
+ <div class="border border-3  w-75 d-flex justify-content-center m-5 mx-auto">     
+<?php
+$id= $_POST['name'];
+$sql_result = mysqli_query($conn, "SELECT * FROM bikes WHERE id=$id");
+while ($row = mysqli_fetch_assoc($sql_result)) {
+    echo "
+    <div class='card  border border-0 ' style='width: 25rem;'>
+  <img src='{$row['img1']}' class='card-img-top' alt='...'>
+  <div class='card-body'>
+    <h2 class='card-title'>{$row['title']}</h2>
+    <p class='card-text'>{$row['overview']}</p>
+      <p class='card-text'><b>Fuel Type: </b>{$row['fuel']}</p><b class='ms-2'>Rent: </b>
+    <p class='card-text btn btn-danger mt-3'>{$row['rent']} INR/day</p>
+    
+  </div>
+</div>";
+}
+
+$stmt = $conn->prepare("SELECT * FROM registered_user WHERE mail = ?");
+$stmt->bind_param("s", $_SESSION['usermail']);
+
+// Execute the statement
+$stmt->execute();
+
+// Get the result
+$sql_result2 = $stmt->get_result();
+
+// Fetch and display the results
+while ($row = $sql_result2->fetch_assoc()) {
+    echo "
+    <div class='card ms-1  border border-0 ' style='width: 30rem;'>
+       
+        <div class='card-body mt-5'>
+        <h3 class='text-center'>Confirmation form</h3>
+        <form method='POST' enctype='multipart/form-data' action='order_placed.php' class='row mt-4 ms-2 w-100 '>
+    <div class='row mb-1'>
+       <h5 class='opacity-50 text-center'>Email: {$row['mail']}</h5>
+       
     </div>
+    <div class='row mb-3'>
+        <label for='name' class='col-sm-4 col-form-label'>Name</label>
+        <div class=col-sm-8>
+        <input type='text' class='form-control' name='name' value='{$row['name']}' required></div>
+    </div>
+    <div class='row mb-3'>
+        <label for='day' class='col-sm-4 col-form-label'>Rent for</label>
+         <div class=col-sm-8>
+        <input type='number' class='form-control' name='day' placeholder='1 days' required>
+        </div>
+    </div>
+    <div class='row mb-3'>
+        <label for='number' class='col-sm-4 col-form-label'>Contact No.</label>
+         <div class=col-sm-8>
+        <input type='number' class='form-control' name='number' value='{$row['contact1']}' required>
+        </div>
+    </div>
+   
+    <div class='row mb-3'>
+        <label for='address' class='col-sm-4 col-form-label'>Address</label>
+         <div class=col-sm-8>
+        <input type='text' class='form-control' name='address' value='{$row['address1']}' required>
+        </div>
     </div>
 
+    <div class='row mb-3'>
+        <label for='city' class='col-sm-4 col-form-label'>City</label>
+         <div class=col-sm-8>
+        <input type='text' class='form-control' name='city' value='{$row['city']}' required>
+        </div>
+    </div>
+    <div class='row mb-3'>
+      
+                                <input type='hidden' name='id' value='$id'>
+                                <input type='submit' class='btn btn-primary' value='Place order'>
+        
+    </div>
+</form>
+
+       <a href='view.php' class='btn btn-warning w-100 ms-1'>Back</a>
+        </div>
+    </div>";
+}
+
+// Close the statement
+$stmt->close();
+
+// Close the connection
+$conn->close();
+?>
+
+</div>
+     
+
+     
 
       <!--footer  starts-->
       <div class="border-1 border-top">
@@ -194,5 +280,9 @@
         </footer>
         <!-- Footer -->
       </div>
+ 
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+

@@ -41,32 +41,47 @@
           </div>
         </div>
       </nav>
-    <div class="container my-5">
+    <div class="container my-5 position-relative">
       <div class="card-group">
         <?php
         include "../shared/connection.php";
-        $count = 1;
+      
         $sql_result = mysqli_query($conn, "SELECT * FROM bikes");
         while ($row = mysqli_fetch_assoc($sql_result)) {
-            if($count==8){
-                break;
-            }
+           
             echo "
+           
                 <div class='col'>
-                    <div class='card border-2 border-black' style='width: 18rem; height:25rem;'>
-                        <img src='{$row['img1']}' class='card-img-top' alt='...'>
+
+                    <div class='card border-2 border-black' style='width: 18rem; height:30rem;'>
+                          
+                         <img src='{$row['img1']}' class='card-img-top' alt='...'>
                         <div class='card-body '>
                             <h5 class='card-title'>{$row['title']}</h5>
-                            <p class='card-text'>{$row['overview']}</p>
-                            <div class='d-flex justify-content-evenly'>
-                            <p class='btn btn-danger '>{$row['rent']} INR /Day</p>
-                            <a href='signup.html' class='btn btn-primary h-50 '>Book Now</a>
+                            <div class='card-text'>
+                            <p >{$row['overview']}</p>
+                        
+                            <p ><b>Fuel Type:</b> {$row['fuel']} <b class='ms-4'>Capacity :</b>{$row['capacity']}</p>
+                            </div>
+                            
+                            <form method='POST' action='view.php'>
+                                <input type='hidden' name='name' value='{$row['id']}'>
+                                <input type='submit' class='my-2 btn btn-sm btn-warning w-100' value='View more details'>
+                            </form>
+                            <div class='d-flex justify-content-between'>
+                            <p class='btn btn-danger  h-25'>{$row['rent']} INR /Day</p>
+                           <form method='POST' action='order.php'>
+                                <input type='hidden' name='name' value='{$row['id']}'>
+                                <input type='submit' class='btn btn-primary' value='Book Now'>
+                            </form>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                
             ";
-            $count++;
+        
         }
         ?>
         
@@ -194,5 +209,8 @@
         </footer>
         <!-- Footer -->
       </div>
+      
+
+      <script src=script.js></script>
 </body>
 </html>

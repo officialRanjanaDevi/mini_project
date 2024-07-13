@@ -28,10 +28,10 @@
               <a class="nav-link active" aria-current="page" href="home.php">Home</a>
             </li>
             <li class="nav-item ms-5">
-              <a class="nav-link" href="about_us.html">About us</a>
+              <a class="nav-link" href="bike_listing.php">Bike Listing</a>
             </li>
             <li class="nav-item ms-5">
-              <a class="nav-link" href="bike_listing.php">Bike Listing</a>
+              <a class="nav-link" href="bike_listing.php">Orders</a>
             </li>
             <li class="nav-item ms-5">
               <a class="nav-link" href="faqs.html">FAQs</a>
@@ -40,8 +40,10 @@
               <a class="nav-link" href="contact_us.html">Contact us</a>
             </li>
           </ul>
-          <button type="button" onclick="location.href = 'signup.html';" class="btn navbar-text btn-outline-light">
-            Login/Sign Up
+          <button type="button" onclick="location.href = 'signup.html';" class=" btn navbar-text btn-outline-light">
+          <i class="fa fa-cart-plus fs-3" aria-hidden="true"></i>
+          Cart
+          
           </button>
         </div>
       </div>
@@ -176,12 +178,12 @@
 
 
   <!--  additional information about site -->
-  <section class="mt-5 ps-3 d-flex justify-content-center">
+  <section class="ps-3 d-flex justify-content-center" >
 
     <div class="row row-cols-2 row-cols-md-3 g-5 ms-5 ps-5">
       <div class="col gx-5 ">
         <div class="card border-0 add-info-card">
-          <img src="images/path.png" class="card-img-top h-75 " alt="...">
+          <img src="images/path.png" class="card-img-top h-75" alt="...">
           <div class="card-body text-center">
             <h5 class="card-title">No Riding Limits</h5>
             <p class="card-text">Odometer Won't Scare You Anymore.</p>
@@ -250,71 +252,56 @@
 
 
   <!-- customer review section -->
-  <div class="customer-review mt-5 pt-5 ">
-    <div class="card mb-3 z-n1 position-absolute">
-      <img src="images/bgscooter.png" class="opacity-75 card-img-top " alt="...">
+  <div class="position-relative customer-review mt-5 py-5 " style="opacity:0.8;height:80vh;background-image: url('images/bgscooter.png'); background-size: cover; background-position: center center;">
+  
+  <div class="d-flex flex-column">
+    <div class="mb-5 pt-1 text-light align-self-center">
+      <h2><span class="fw-bold text-center">Our Satisfied </span>customer review</h2>
     </div>
-    <div class="d-flex flex-column">
-
-
-      <div class="my-5 pt-5 text-light align-self-center">
-        <h2><span class="fw-bold text-center   ">Our Satisfied </span>customer review</h2>
-      </div>
-
-      <div class="d-flex justify-content-center review">
-
-
-
-        <div class="card review mb-3" style="max-width: 540px;">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="images/review.jpg" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Ella</h5>
-                <p class="card-text">This is amazing! I mean really such great bike for rent at affordable price. oh
-                  this is crazy man!</p>
-                <i class="fa fa-star text-warning " aria-hidden="true"></i>
-                <i class="fa fa-star text-warning" aria-hidden="true"></i>
-                <i class="fa fa-star text-warning" aria-hidden="true"></i>
-                <i class="fa fa-star text-warning" aria-hidden="true"></i>
-                <i class="fa fa-star-o text-warning" aria-hidden="true"></i>
-              </div>
-            </div>
+    <div class="d-flex justify-content-center review">
+      <div class="card review mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="images/review.jpg" class="img-fluid rounded-start" alt="...">
           </div>
-        </div>
-
-        <div class="card review ms-5 mb-3" style="max-width: 540px;">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="images/review2.0.jpg" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Karan</h5>
-                <p class="card-text">
-                  I think this is the one and only top bike rental site in the world. 4-Stars from me - Full
-                  satisfaction, no complain at all</p>
-                <i class="fa fa-star text-warning" aria-hidden="true"></i>
-                <i class="fa fa-star text-warning" aria-hidden="true"></i>
-                <i class="fa fa-star text-warning" aria-hidden="true"></i>
-                <i class="fa fa-star text-warning" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o text-warning" aria-hidden="true"></i>
-              </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Ella</h5>
+              <p class="card-text">This is amazing! I mean really such great bike for rent at affordable price. oh this is crazy man!</p>
+              <i class="fa fa-star text-warning" aria-hidden="true"></i>
+              <i class="fa fa-star text-warning" aria-hidden="true"></i>
+              <i class="fa fa-star text-warning" aria-hidden="true"></i>
+              <i class="fa fa-star text-warning" aria-hidden="true"></i>
+              <i class="fa fa-star-o text-warning" aria-hidden="true"></i>
             </div>
           </div>
         </div>
       </div>
-
-
+      <div class="card review ms-5 mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="images/review2.0.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Karan</h5>
+              <p class="card-text">I think this is the one and only top bike rental site in the world. 4-Stars from me - Full satisfaction, no complain at all</p>
+              <i class="fa fa-star text-warning" aria-hidden="true"></i>
+              <i class="fa fa-star text-warning" aria-hidden="true"></i>
+              <i class="fa fa-star text-warning" aria-hidden="true"></i>
+              <i class="fa fa-star text-warning" aria-hidden="true"></i>
+              <i class="fa fa-star-half-o text-warning" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+</div>
 
-
-  <div class="mt-5">
+  <div class="">
     <!-- Footer -->
-    <footer class="text-center text-lg-start text-white " style="background-color: #000000">
+    <footer class="pt-5 text-center text-lg-start text-white " style="background-color: #000000">
 
       <div class=" p-4 pb-0">
 
@@ -383,16 +370,6 @@
 
         <hr class="mb-4" />
 
-        <!-- Section: CTA -->
-        <section class="">
-          <p class="d-flex justify-content-center align-items-center">
-            <span class="me-3">Admin Login</span>
-            <button type="button" onclick="location.href = 'admin_login.html';" class="btn btn-outline-light btn-rounded">
-              Login Now!
-            </button>
-          </p>
-        </section>
-        <!-- Section: CTA -->
 
         <hr class="mb-4" />
 

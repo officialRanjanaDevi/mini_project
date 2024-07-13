@@ -1,12 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bike Rental System(MiniProject)</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+      
     <link rel="Stylesheet" href="index.css" />
 </head>
 <body>
@@ -41,38 +43,75 @@
           </div>
         </div>
       </nav>
-    <div class="container my-5">
-      <div class="card-group">
-        <?php
-        include "../shared/connection.php";
-        $count = 1;
-        $sql_result = mysqli_query($conn, "SELECT * FROM bikes");
-        while ($row = mysqli_fetch_assoc($sql_result)) {
-            if($count==8){
-                break;
-            }
-            echo "
-                <div class='col'>
-                    <div class='card border-2 border-black' style='width: 18rem; height:25rem;'>
-                        <img src='{$row['img1']}' class='card-img-top' alt='...'>
-                        <div class='card-body '>
-                            <h5 class='card-title'>{$row['title']}</h5>
-                            <p class='card-text'>{$row['overview']}</p>
-                            <div class='d-flex justify-content-evenly'>
-                            <p class='btn btn-danger '>{$row['rent']} INR /Day</p>
-                            <a href='signup.html' class='btn btn-primary h-50 '>Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            ";
-            $count++;
-        }
-        ?>
-        
-    </div>
-    </div>
 
+
+      <!-- user info form  -->
+     <!-- user info form  -->
+<div class='d-flex'>
+    <form method="POST" enctype='multipart/form-data' action="addinfo.php" class="row g-4 w-75 m-5">
+        <div class="col-md-6">
+            <label for="mail" class="form-label">Email</label>
+            <input type="email" class="form-control" name="mail" required>
+        </div>
+        <div class="col-md-6">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" name="name" required>
+        </div>
+        <div class="col-md-6">
+            <label for="number1" class="form-label">Contact Number 1</label>
+            <input type="number" class="form-control" name="number1" required>
+        </div>
+        <div class="col-md-6">
+            <label for="number2" class="form-label">Contact Number 2</label>
+            <input type="number" class="form-control" name="number2">
+        </div>
+        <div class="col-12">
+            <label for="address1" class="form-label">Address</label>
+            <input type="text" class="form-control" name="address1" placeholder="1234 Main St" required>
+        </div>
+        <div class="col-12">
+            <label for="address2" class="form-label">Address 2</label>
+            <input type="text" class="form-control" name="address2" placeholder="Apartment, studio, or floor">
+        </div>
+        <div class="col-md-6">
+            <label for="city" class="form-label">City</label>
+            <input type="text" class="form-control" name="city" required>
+        </div>
+        <div class="col-md-4">
+            <label for="state" class="form-label">State</label>
+            <select name="state" class="form-select" required>
+                <option selected>Choose...</option>
+                <option>Uttarakhand</option>
+                <option>Uttar Pradesh</option>
+                <option>Delhi</option>
+                <option>Haryana</option>
+                <option>Gujarat</option>
+                <option>Rajasthan</option>
+                <option>West Bengal</option>
+                <option>Kerala</option>
+                <option>Tamil Nadu</option>
+                <option>Odisha</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label for="zip" class="form-label">Zip</label>
+            <input type="text" class="form-control" name="zip" required>
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="gridCheck" required>
+                <label class="form-check-label" for="gridCheck">
+                    I agree that all the information provided above are correct.
+                </label>
+            </div>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+
+     
 
       <!--footer  starts-->
       <div class="border-1 border-top">
@@ -194,5 +233,9 @@
         </footer>
         <!-- Footer -->
       </div>
+ 
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
