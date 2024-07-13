@@ -1,3 +1,5 @@
+<?php
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,8 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bike Rental System(MiniProject)</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="Stylesheet" href="index.css">
 </head>
 
@@ -18,8 +19,7 @@
     <nav class="navbar  navbar-expand-lg bg-transparent border-body" data-bs-theme="dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Online Bike Rental</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
@@ -40,7 +40,7 @@
               <a class="nav-link" href="contact_us.html">Contact us</a>
             </li>
           </ul>
-          <button type="button"  onclick="location.href = 'signup.html';" class="btn navbar-text btn-outline-light" >
+          <button type="button" onclick="location.href = 'signup.html';" class="btn navbar-text btn-outline-light">
             Login/Sign Up
           </button>
         </div>
@@ -52,14 +52,12 @@
   <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" class="active"
-        aria-current="true" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" class="active" aria-current="true" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
       <div class="carousel-item" data-bs-interval="10000">
-        <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="700" src="images/bgimg1.jpg"
-          role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="700" src="images/bgimg1.jpg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false">
         <title>Placeholder</title>
         <rect width="100%" height="100%" fill="#f5f5f5"></rect>
 
@@ -69,8 +67,7 @@
         </div>
       </div>
       <div class="carousel-item active" data-bs-interval="2000">
-        <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="700" src="images/bgimg2.jpg"
-          role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="700" src="images/bgimg2.jpg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false">
         <title>Placeholder</title>
         <rect width="100%" height="100%" fill="#eee"></rect></img>
         <div class="carousel-caption d-none d-md-block">
@@ -79,8 +76,7 @@
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="3000">
-        <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="700" src="images/bgimg3.jpg"
-          role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="700" src="images/bgimg3.jpg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false">
         <title>Placeholder</title>
         <rect width="100%" height="100%" fill="#e5e5e5"></rect></img>
         <div class="carousel-caption d-none d-md-block">
@@ -109,77 +105,39 @@
       help you!! No waste of time during your holidays to find a rental point on the spot! No language barrier, thanks
       to our multilingual team! At the same price you would pay on the spot! We have best bikes with best deals</p>
   </div>
-  <div class="  border-bottom  border-2 ps-5 pe-5 ">
-    <div class=" row row-cols-1 row-cols-md-3 g-4 ">
-      <div class="col">
-        <div class="card  border-1 h-100">
-          <img src="images/ktm.webp" class="card-img-top h-75 " alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content.</p>
-          </div>
-
-        </div>
-      </div>
-      <div class="col">
-        <div class="card border-1 h-100">
-          <img src="images/pulsar.jpg" class="card-img-top h-75" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-          </div>
-
-        </div>
-      </div>
-      <div class="col">
-        <div class="card border-1 h-100">
-          <img src="images/renfield.jpg" class="card-img-top h-75" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content.</p>
-          </div>
-
-        </div>
-      </div>
+  <div class="border-2 ps-5 pe-5 mb-5">
+    <div class="card-group">
+        <?php
+        include "../shared/connection.php";
+        $count = 1;
+        $sql_result = mysqli_query($conn, "SELECT * FROM bikes");
+        while ($row = mysqli_fetch_assoc($sql_result)) {
+            if($count==8){
+                break;
+            }
+            echo "
+                <div class='col'>
+                    <div class='card border-2 border-black' style='width: 18rem; height:25rem;'>
+                        <img src='{$row['img1']}' class='card-img-top' alt='...'>
+                        <div class='card-body '>
+                            <h5 class='card-title'>{$row['title']}</h5>
+                            <p class='card-text'>{$row['overview']}</p>
+                            <div class='d-flex justify-content-evenly'>
+                            <p class='btn btn-danger '>{$row['rent']} INR /Day</p>
+                            <a href='bike_listing.html' class='btn btn-primary h-50'>View more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ";
+            $count++;
+        }
+        ?>
+        
     </div>
-    <div class="row row-cols-1 row-cols-md-3 g-4 mt-5">
-      <div class="col">
-        <div class="card border-1 h-100">
-          <img src="images/scooter.jpg" class="card-img-top h-75" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content.</p>
-          </div>
+</div>
 
-        </div>
-      </div>
-      <div class="col">
-        <div class="card border-1 h-100">
-          <img src="images/scooty.jpg" class="card-img-top h-75" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-          </div>
 
-        </div>
-      </div>
-      <div class="col">
-        <div class="card border-1 h-100">
-          <img src="images/activa.jpg" class="card-img-top h-75" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content. </p>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- bike section ends -->
 
   <!-- how to book bike -->
   <section class="bike-book border-bottom border-black border-2 mb-5 py-5 d-flex flex-column align-items-center">
@@ -215,7 +173,7 @@
       </div>
     </div>
   </section>
-  <!-- how to book bike ends -->
+
 
   <!--  additional information about site -->
   <section class="mt-5 ps-3 d-flex justify-content-center">
@@ -287,7 +245,10 @@
     </div>
 
   </section>
-  <!-- --------------------------- -->
+
+
+
+
   <!-- customer review section -->
   <div class="customer-review mt-5 pt-5 ">
     <div class="card mb-3 z-n1 position-absolute">
@@ -349,18 +310,18 @@
 
     </div>
   </div>
-  <!-- customer review section ends -->
+
 
   <div class="mt-5">
     <!-- Footer -->
     <footer class="text-center text-lg-start text-white " style="background-color: #000000">
-      <!-- Grid container -->
+
       <div class=" p-4 pb-0">
-        <!-- Section: Links -->
+
         <section class="">
-          <!--Grid row-->
+
           <div class="row mx-5 px-5 ">
-            <!--Grid column-->
+
             <div class="col-lg-4 col-md-6 mb-4 mb-md-0 pe-5">
               <h5 class="text-uppercase">FOOTER CONTENT</h5>
 
@@ -451,7 +412,7 @@
 
           <!-- Instagram -->
           <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-          <i class="fa fa-instagram"  aria-hidden="true"></i></a>
+            <i class="fa fa-instagram" aria-hidden="true"></i></a>
 
           <!-- Linkedin -->
           <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
@@ -459,7 +420,7 @@
 
           <!-- Github -->
           <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-          <i class="fa fa-github"  aria-hidden="true"></i></a>
+            <i class="fa fa-github" aria-hidden="true"></i></a>
         </section>
         <!-- Section: Social media -->
       </div>
@@ -478,11 +439,9 @@
 
 
 
-  
-  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>

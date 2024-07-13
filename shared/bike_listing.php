@@ -42,29 +42,35 @@
         </div>
       </nav>
     <div class="container my-5">
-        <div class="bikes">
-            <h2 class="text-center">Bikes</h2>
-            <div class="card border-2 border-black" style="width: 18rem;">
-                <img src="images/ktm.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Rent it</a>
+      <div class="card-group">
+        <?php
+        include "../shared/connection.php";
+        $count = 1;
+        $sql_result = mysqli_query($conn, "SELECT * FROM bikes");
+        while ($row = mysqli_fetch_assoc($sql_result)) {
+            if($count==8){
+                break;
+            }
+            echo "
+                <div class='col'>
+                    <div class='card border-2 border-black' style='width: 18rem; height:25rem;'>
+                        <img src='{$row['img1']}' class='card-img-top' alt='...'>
+                        <div class='card-body '>
+                            <h5 class='card-title'>{$row['title']}</h5>
+                            <p class='card-text'>{$row['overview']}</p>
+                            <div class='d-flex justify-content-evenly'>
+                            <p class='btn btn-danger '>{$row['rent']} INR /Day</p>
+                            <a href='bike_listing.html' class='btn btn-primary h-50 '>Book Now</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-        </div>
-        <div class="scooty mt-5">
-            <h2 class="text-center">Scooty</h2>
-            <div class="card border-2 border-black" style="width: 18rem;">
-                <img src="images/scooty.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Rent it</a>
-                </div>
-              </div>
-        </div>
-       
+            ";
+            $count++;
+        }
+        ?>
+        
+    </div>
     </div>
 
 
