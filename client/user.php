@@ -1,4 +1,7 @@
-
+<?php
+ include "../shared/connection.php";
+ include "authentication.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +31,7 @@
                 <a class="nav-link" href="about_us.html">About us</a>
               </li>
               <li class="nav-item ms-5">
-                <a class="nav-link active" href="bike_listing.html">Bike Listing</a>
+                <a class="nav-link" href="bike_listing.html">Bike Listing</a>
               </li>
               <li class="nav-item ms-5">
                 <a class="nav-link" href="faqs.html">FAQs</a>
@@ -37,9 +40,19 @@
                 <a class="nav-link" href="contact_us.html">Contact us</a>
               </li>
             </ul>
-            <button type="button" class="btn navbar-text btn-outline-dark">
-              Login/Sign Up
-            </button>
+            <button type="button" onclick="location.href = 'cart.php'" class=" btn btn-outline-light border-0 ">
+          <i class="fa fa-cart-plus fs-4" aria-hidden="true"></i></button>
+          <div class="dropdown dropstart">
+  <a class=" btn btn-outline-light border-0 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <i class="fa fa-sign-out fs-4" aria-hidden="true"></i>
+  </a>
+
+  <ul class="dropdown-menu mt-4 bg-transparent border-2 border-light ms-3">
+    <li><a class="btn btn-outline-light border-0 w-100 rounded-0" href="logout.php">Log Out</a></li>
+    <li><a class="btn btn-outline-light border-0 w-100 rounded-0" href="#">Your Profile</a></li>
+  </ul>
+</div>
+<i class="fa fa-user-circle-o fs-4 text-light" aria-hidden="true"></i>  
           </div>
         </div>
       </nav>

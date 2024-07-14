@@ -1,6 +1,6 @@
 <?php
-include "../shared/connection.php";
 include "authentication.php";
+include "../shared/connection.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,13 +8,14 @@ include "authentication.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bike Rental System(MiniProject)</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+      
     <link rel="Stylesheet" href="index.css" />
 </head>
 <body>
-<nav class="navbar  navbar-expand-lg border-body" data-bs-theme="dark" >
+<nav class="navbar  navbar-expand-lg border-body" data-bs-theme="dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Online Bike Rental</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,16 +27,16 @@ include "authentication.php";
               <a class="nav-link " aria-current="page" href="home.php">Home</a>
             </li>
             <li class="nav-item ms-5">
-              <a class="nav-link active" href="bike_listing.php">Bike Listing</a>
+              <a class="nav-link" href="bike_listing.php">Bike Listing</a>
             </li>
             <li class="nav-item ms-5">
-              <a class="nav-link" href="rented.php">Orders</a>
+              <a class="nav-link " href="rented.php">Orders</a>
             </li>
             <li class="nav-item ms-5">
               <a class="nav-link" href="faqs.html">FAQs</a>
             </li>
             <li class="nav-item ms-5">
-              <a class="nav-link" href="contact_us.php">Contact us</a>
+              <a class="nav-link active" href="contact_us.php">Contact us</a>
             </li>
           </ul>
           <button type="button" onclick="location.href = 'cart.php'" class=" btn btn-outline-light border-0 ">
@@ -56,58 +57,40 @@ include "authentication.php";
     </nav>
 
 
-      <div class="container my-5 position-relative">
-      <div class="card-group">
-        <?php
-        include "../shared/connection.php";
-      
-        $sql_result = mysqli_query($conn, "SELECT * FROM bikes");
-        while ($row = mysqli_fetch_assoc($sql_result)) {
-           
-            echo "
-           
-                <div class='col'>
-
-                    <div class='card border-2 border-black' style='width: 18rem; height:31rem;'>
-                          
-                         <img src='{$row['img1']}' class='card-img-top' alt='...'>
-                        <div class='card-body '>
-                            <h5 class='card-title'>{$row['title']}</h5>
-                            <div class='card-text'>
-                            <p >{$row['overview']}</p>
-                        
-                            <p ><b>Fuel Type:</b> {$row['fuel']} <b class='ms-4'>Capacity :</b>{$row['capacity']}</p>
-                            </div>
-                            
-                             <a class='btn btn-sm btn-danger   w-100'>{$row['rent']} INR /Day</a>
-                            <form method='POST' action='view.php'>
-                                <input type='hidden' name='name' value='{$row['id']}'>
-                                <input type='submit' class='my-1 btn btn-sm btn-secondary w-100' value='View more details'>
-                            </form>
-                            <div class='d-flex justify-content-between'>
-                           <form method='POST' action='addtocart.php'>
-                                <input type='hidden' name='name' value='{$row['id']}'>
-                                <input type='submit' class='btn btn-warning' value='Add to cart'>
-                            </form>
-                           <form method='POST' action='order.php'>
-                                <input type='hidden' name='name' value='{$row['id']}'>
-                                <input type='submit' class='btn btn-primary' value='Book Now'>
-                            </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                
-            ";
-        
-        }
-        ?>
-        
+    <div class="card m-5 w-75 mx-auto border-4 border-dark">
+  <h3 class="card-header border-4">Get in touch with us ...</h3>
+  <div class="card-body ">
+    <form method="POST" action="send_message.php">
+    <div class="row mb-3">
+    <label for="name" class=" col-sm-2 col-form-label">Name : </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="name" required>
     </div>
+  </div>
+
+  <div class="row mb-3">
+    <label for="title" class="col-sm-2 col-form-label">Regarding to: </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="title" required>
     </div>
+  </div>
+  <div class="row mb-3">
+    <label for="message" class="col-sm-2 col-form-label ">Message :</label>
+    <div class="col-sm-10">
+      <textarea type="text" class="form-control" name="message" rows="5" required></textarea>
+    </div>
+  </div>
+ 
+<div class="row mb-3">
+  <button type="submit" class="col-sm-3 mx-auto mt-3 btn btn-primary"  >Send</button></div>
 
+</form>
+    
+  </div>
+</div>
+<!-- Modal -->
 
+    
       <!--footer  starts-->
       <div class="border-1 border-top">
         <!-- Footer -->
@@ -228,8 +211,9 @@ include "authentication.php";
         </footer>
         <!-- Footer -->
       </div>
-      
-
-      <script src=script.js></script>
+ 
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+

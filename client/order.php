@@ -33,38 +33,46 @@ $stmt = $conn->prepare("SELECT * FROM registered_user WHERE mail = ?");
     <link rel="Stylesheet" href="index.css" />
 </head>
 <body>
-    <nav class=" navbar navbar-expand-lg  border-body border-bottom" data-bs-theme="dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Online Bike Rental</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item ms-5">
-                <a class="nav-link" aria-current="page" href="index.html">Home</a>
-              </li>
-              <li class="nav-item ms-5">
-                <a class="nav-link" href="about_us.html">About us</a>
-              </li>
-              <li class="nav-item ms-5">
-                <a class="nav-link active" href="bike_listing.html">Bike Listing</a>
-              </li>
-              <li class="nav-item ms-5">
-                <a class="nav-link" href="faqs.html">FAQs</a>
-              </li>
-              <li class="nav-item ms-5">
-                <a class="nav-link" href="contact_us.html">Contact us</a>
-              </li>
-            </ul>
-            <button type="button" class="btn navbar-text btn-outline-dark">
-              Login/Sign Up
-            </button>
-          </div>
+<nav class="navbar  navbar-expand-lg  border-body" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Online Bike Rental</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto  mb-2 mb-lg-0">
+            <li class="nav-item ms-5">
+              <a class="nav-link" aria-current="page" href="home.php">Home</a>
+            </li>
+            <li class="nav-item ms-5">
+              <a class="nav-link active" href="bike_listing.php">Bike Listing</a>
+            </li>
+            <li class="nav-item ms-5">
+              <a class="nav-link" href="rented.php">Orders</a>
+            </li>
+            <li class="nav-item ms-5">
+              <a class="nav-link" href="faqs.html">FAQs</a>
+            </li>
+            <li class="nav-item ms-5">
+              <a class="nav-link" href="contact_us.php">Contact us</a>
+            </li>
+          </ul>
+          <button type="button" onclick="location.href = 'cart.php'" class=" btn btn-outline-light border-0 ">
+          <i class="fa fa-cart-plus fs-4" aria-hidden="true"></i></button>
+          <div class="dropdown dropstart">
+  <a class=" btn btn-outline-light border-0 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <i class="fa fa-sign-out fs-4" aria-hidden="true"></i>
+  </a>
+
+  <ul class="dropdown-menu mt-4 bg-transparent border-2 border-light ms-3">
+    <li><a class="btn btn-outline-light border-0 w-100 rounded-0" href="logout.php">Log Out</a></li>
+    <li><a class="btn btn-outline-light border-0 w-100 rounded-0" href="#">Your Profile</a></li>
+  </ul>
+</div>
+<i class="fa fa-user-circle-o fs-4 text-light" aria-hidden="true"></i>  
         </div>
-      </nav>
-     
+      </div>
+    </nav>
  <div class="border border-3  w-75 d-flex justify-content-center m-5 mx-auto">     
 <?php
 $id= $_POST['name'];
@@ -142,8 +150,9 @@ while ($row = $sql_result2->fetch_assoc()) {
         
     </div>
 </form>
-
-       <a href='view.php' class='btn btn-warning w-100 ms-1'>Back</a>
+       <form method='POST' class='w-100' action='view.php' >
+      <input type='hidden' name='name' value='$id'>
+                                <input type='submit' class='w-100 btn btn-warning' value='Back'></form>
         </div>
     </div>";
 }

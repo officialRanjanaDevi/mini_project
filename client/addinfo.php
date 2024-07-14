@@ -1,6 +1,7 @@
 <?php
 
 include "../shared/connection.php";
+include "authentication.php";
 
 
 

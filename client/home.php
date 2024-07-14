@@ -1,4 +1,7 @@
 <?php
+
+include "../shared/connection.php";
+include "authentication.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,20 +34,28 @@
               <a class="nav-link" href="bike_listing.php">Bike Listing</a>
             </li>
             <li class="nav-item ms-5">
-              <a class="nav-link" href="bike_listing.php">Orders</a>
+              <a class="nav-link" href="rented.php">Orders</a>
             </li>
             <li class="nav-item ms-5">
               <a class="nav-link" href="faqs.html">FAQs</a>
             </li>
             <li class="nav-item ms-5">
-              <a class="nav-link" href="contact_us.html">Contact us</a>
+              <a class="nav-link" href="contact_us.php">Contact us</a>
             </li>
           </ul>
-          <button type="button" onclick="location.href = 'signup.html';" class=" btn navbar-text btn-outline-light">
-          <i class="fa fa-cart-plus fs-3" aria-hidden="true"></i>
-          Cart
-          
-          </button>
+          <button type="button" onclick="location.href = 'cart.php'" class=" btn btn-outline-light border-0 ">
+          <i class="fa fa-cart-plus fs-4" aria-hidden="true"></i></button>
+          <div class="dropdown dropstart">
+  <a class=" btn btn-outline-light border-0 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <i class="fa fa-sign-out fs-4" aria-hidden="true"></i>
+  </a>
+
+  <ul class="dropdown-menu mt-4 bg-transparent border-2 border-light ms-3">
+    <li><a class="btn btn-outline-light border-0 w-100 rounded-0" href="logout.php">Log Out</a></li>
+    <li><a class="btn btn-outline-light border-0 w-100 rounded-0" href="#">Your Profile</a></li>
+  </ul>
+</div>
+<i class="fa fa-user-circle-o fs-4 text-light" aria-hidden="true"></i>  
         </div>
       </div>
     </nav>
@@ -58,7 +69,7 @@
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
-      <div class="carousel-item" data-bs-interval="10000">
+      <div class="carousel-item" data-bs-interval="2000">
         <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="700" src="images/bgimg1.jpg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false">
         <title>Placeholder</title>
         <rect width="100%" height="100%" fill="#f5f5f5"></rect>
@@ -77,7 +88,7 @@
           <p>Some representative placeholder content for the second slide.</p>
         </div>
       </div>
-      <div class="carousel-item" data-bs-interval="3000">
+      <div class="carousel-item" data-bs-interval="2000">
         <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="700" src="images/bgimg3.jpg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false">
         <title>Placeholder</title>
         <rect width="100%" height="100%" fill="#e5e5e5"></rect></img>
@@ -423,4 +434,3 @@
 
 </html>
 
-</div>

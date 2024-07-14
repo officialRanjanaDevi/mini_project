@@ -1,3 +1,3 @@
 <?php
-header("location:./shared/home.php")
+header("location:shared/home.php")
 ?>

@@ -1,6 +1,6 @@
 <?php
-include "../shared/connection.php";
 include "authentication.php";
+include "../shared/connection.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,13 +8,14 @@ include "authentication.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bike Rental System(MiniProject)</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+      
     <link rel="Stylesheet" href="index.css" />
 </head>
 <body>
-<nav class="navbar  navbar-expand-lg border-body" data-bs-theme="dark" >
+<nav class="navbar  navbar-expand-lg border-body" data-bs-theme="dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Online Bike Rental</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,10 +27,10 @@ include "authentication.php";
               <a class="nav-link " aria-current="page" href="home.php">Home</a>
             </li>
             <li class="nav-item ms-5">
-              <a class="nav-link active" href="bike_listing.php">Bike Listing</a>
+              <a class="nav-link" href="bike_listing.php">Bike Listing</a>
             </li>
             <li class="nav-item ms-5">
-              <a class="nav-link" href="rented.php">Orders</a>
+              <a class="nav-link " href="rented.php">Orders</a>
             </li>
             <li class="nav-item ms-5">
               <a class="nav-link" href="faqs.html">FAQs</a>
@@ -55,58 +56,66 @@ include "authentication.php";
       </div>
     </nav>
 
+      <h2 class="text-center mt-5">Selected Bikes</h2>
+      <table class="w-75 mx-auto my-5 table table-striped table-hover">
+      <thead>
+    <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">Title</th>
+        <th scope="col">Brand</th>
+        <th scope="col">Images</th>
+        <th scope="col">Rent per day</th>
+        <th scope="col">Remove</th>
+    </tr>
+</thead>
+<tbody class="table-group-divider">
+    <?php
+  
+    $count = 1;
+    $mail = $_SESSION['usermail'];  // Assuming session is already started
 
-      <div class="container my-5 position-relative">
-      <div class="card-group">
-        <?php
-        include "../shared/connection.php";
-      
-        $sql_result = mysqli_query($conn, "SELECT * FROM bikes");
-        while ($row = mysqli_fetch_assoc($sql_result)) {
-           
-            echo "
-           
-                <div class='col'>
+    // Use prepared statements for the outer query
+    $stmt = $conn->prepare("SELECT * FROM cart WHERE mail= ?");
+    $stmt->bind_param("s", $mail);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-                    <div class='card border-2 border-black' style='width: 18rem; height:31rem;'>
-                          
-                         <img src='{$row['img1']}' class='card-img-top' alt='...'>
-                        <div class='card-body '>
-                            <h5 class='card-title'>{$row['title']}</h5>
-                            <div class='card-text'>
-                            <p >{$row['overview']}</p>
-                        
-                            <p ><b>Fuel Type:</b> {$row['fuel']} <b class='ms-4'>Capacity :</b>{$row['capacity']}</p>
-                            </div>
-                            
-                             <a class='btn btn-sm btn-danger   w-100'>{$row['rent']} INR /Day</a>
-                            <form method='POST' action='view.php'>
-                                <input type='hidden' name='name' value='{$row['id']}'>
-                                <input type='submit' class='my-1 btn btn-sm btn-secondary w-100' value='View more details'>
-                            </form>
-                            <div class='d-flex justify-content-between'>
-                           <form method='POST' action='addtocart.php'>
-                                <input type='hidden' name='name' value='{$row['id']}'>
-                                <input type='submit' class='btn btn-warning' value='Add to cart'>
-                            </form>
-                           <form method='POST' action='order.php'>
-                                <input type='hidden' name='name' value='{$row['id']}'>
-                                <input type='submit' class='btn btn-primary' value='Book Now'>
-                            </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    while ($cartRow = $result->fetch_assoc()) {
+        $bike_id = $cartRow['bike_id'];
 
+        // Use prepared statements for the inner query
+        $stmt2 = $conn->prepare("SELECT * FROM bikes WHERE id= $bike_id");
+        
+        $stmt2->execute();
+        $result2 = $stmt2->get_result();
+
+        if ($bikeRow = $result2->fetch_assoc()) {
+            echo "<tr>
+                <td>{$count}</td>
+                <td>{$bikeRow['title']}</td>
+                <td>{$bikeRow['brand']}</td>
+                <td><img src='{$bikeRow['img1']}' class='picture' style='width: 100px; height: 100px;'></td>
+                <td>{$bikeRow['rent']} INR</td>
                 
-            ";
-        
+                <td>
+                    <form method='POST' action='remove.php'>
+                        <input type='hidden' name='id' value='{$cartRow['id']}'>
+                        <input type='submit' class='btn btn-danger' value='Remove'>
+                    </form>
+                </td>
+            </tr>";
+            $count++;
         }
-        ?>
-        
-    </div>
-    </div>
 
+        $stmt2->close();
+    }
+
+    $stmt->close();
+    $conn->close();
+    ?>
+</tbody>
+
+            </table>
 
       <!--footer  starts-->
       <div class="border-1 border-top">
@@ -228,8 +237,9 @@ include "authentication.php";
         </footer>
         <!-- Footer -->
       </div>
-      
-
-      <script src=script.js></script>
+ 
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+

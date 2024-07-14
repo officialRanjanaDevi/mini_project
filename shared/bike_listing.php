@@ -10,38 +10,40 @@
     <link rel="Stylesheet" href="index.css" />
 </head>
 <body>
-    <nav class=" navbar navbar-expand-lg  border-body border-bottom" data-bs-theme="dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Online Bike Rental</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+    <!-- navbar starts -->
+    <nav class="navbar  navbar-expand-lg bg-transparent border-body" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Online Bike Rental</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto  mb-2 mb-lg-0">
+            <li class="nav-item ms-5">
+              <a class="nav-link active" aria-current="page" href="home.php">Home</a>
+            </li>
+            <li class="nav-item ms-5">
+              <a class="nav-link" href="about_us.html">About us</a>
+            </li>
+            <li class="nav-item ms-5">
+              <a class="nav-link" href="bike_listing.php">Bike Listing</a>
+            </li>
+            <li class="nav-item ms-5">
+              <a class="nav-link" href="faqs.html">FAQs</a>
+            </li>
+            <li class="nav-item ms-5">
+              <a class="nav-link" href="login.html">Contact us</a>
+            </li>
+          </ul>
+          <button type="button" onclick="location.href = 'signup.html';" class="me-2 btn navbar-text btn-outline-light">
+            Login/Sign Up
           </button>
-          <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item ms-5">
-                <a class="nav-link" aria-current="page" href="index.html">Home</a>
-              </li>
-              <li class="nav-item ms-5">
-                <a class="nav-link" href="about_us.html">About us</a>
-              </li>
-              <li class="nav-item ms-5">
-                <a class="nav-link active" href="bike_listing.html">Bike Listing</a>
-              </li>
-              <li class="nav-item ms-5">
-                <a class="nav-link" href="faqs.html">FAQs</a>
-              </li>
-              <li class="nav-item ms-5">
-                <a class="nav-link" href="contact_us.html">Contact us</a>
-              </li>
-            </ul>
-            <button type="button" class="btn navbar-text btn-outline-dark">
-              Login/Sign Up
-            </button>
-          </div>
+          <i class="fa fa-user-circle-o fs-4 text-light" aria-hidden="true"></i>  
         </div>
-      </nav>
-    <div class="container my-5">
+      </div>
+    </nav>
+    <!-- navbar ends -->
+      <div class="container my-5">
       <div class="card-group">
         <?php
         include "../shared/connection.php";

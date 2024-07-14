@@ -1,5 +1,6 @@
 <?php
  include "../shared/connection.php";
+ include "authentication.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,11 +11,11 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-      
+   
     <link rel="Stylesheet" href="index.css" />
 </head>
 <body>
-    <nav class=" navbar navbar-expand-lg  border-body border-bottom" data-bs-theme="dark">
+    <nav class=" navbar navbar-expand-lg  border-body border-bottom" data-bs-theme="dark" >
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Online Bike Rental</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -39,9 +40,19 @@
                 <a class="nav-link" href="contact_us.html">Contact us</a>
               </li>
             </ul>
-            <button type="button" class="btn navbar-text btn-outline-dark">
-              Login/Sign Up
-            </button>
+            <button type="button" onclick="location.href = 'cart.php'" class=" btn btn-outline-light border-0 ">
+          <i class="fa fa-cart-plus fs-4" aria-hidden="true"></i></button>
+          <div class="dropdown dropstart">
+  <a class=" btn btn-outline-light border-0 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <i class="fa fa-sign-out fs-4" aria-hidden="true"></i>
+  </a>
+
+  <ul class="dropdown-menu mt-4 bg-transparent border-2 border-light ms-3">
+    <li><a class="btn btn-outline-light border-0 w-100 rounded-0" href="logout.php">Log Out</a></li>
+    <li><a class="btn btn-outline-light border-0 w-100 rounded-0" href="#">Your Profile</a></li>
+  </ul>
+</div>
+<i class="fa fa-user-circle-o fs-4 text-light" aria-hidden="true"></i>  
           </div>
         </div>
       </nav>
@@ -67,13 +78,13 @@
                         <button type='button' data-bs-target='#carouselExampleDark' data-bs-slide-to='2' aria-label='Slide 3'></button>
                     </div>
                     <div class='carousel-inner ms-1'>
-                        <div class='carousel-item' data-bs-interval='10000'>
+                        <div class='carousel-item' data-bs-interval='3000'>
                             <img class='bd-placeholder-img bd-placeholder-img-lg d-block w-100' width='800' height='600' src='{$row['img1']}' role='img' aria-label='Placeholder: First slide' preserveAspectRatio='xMidYMid slice' focusable='false'>
                         </div>
                         <div class='carousel-item active' data-bs-interval='2000'>
                             <img class='bd-placeholder-img bd-placeholder-img-lg d-block w-100' width='800' height='600' src='{$row['img2']}' role='img' aria-label='Placeholder: Second slide' preserveAspectRatio='xMidYMid slice' focusable='false'>
                         </div>
-                        <div class='carousel-item' data-bs-interval='3000'>
+                        <div class='carousel-item' data-bs-interval='2000'>
                             <img class='bd-placeholder-img bd-placeholder-img-lg d-block w-100' width='800' height='600' src='{$row['img3']}' role='img' aria-label='Placeholder: Third slide' preserveAspectRatio='xMidYMid slice' focusable='false'>
                         </div>
                     </div>
@@ -87,7 +98,7 @@
                     </button>
                 </div>
                 <div class='col-md-4'>
-                    <div class='card-body'>
+                    <div class='z-3 card-body'>
                         <h1 class='card-title'>{$row['title']}</h1>
                         <div class='card-text'>
                             <p><b>Overview:</b> {$row['overview']}</p>
@@ -117,13 +128,17 @@
                         }
                         echo "
                         <div class='d-flex justify-content-between mt-2'>
-                            <p class='btn btn-danger h-25'>{$row['rent']} INR /Day</p>
+                            <p class='btn btn-danger h-25'>{$row['rent']} INR /Day</p>  
+                           <form method='POST' action='addtocart.php'>
+                                <input type='hidden' name='name' value='{$row['id']}'>
+                                <input type='submit' class='btn btn-warning' value='Add to cart'>
+                            </form> </div>
                            <form method='POST' action='order.php'>
                                 <input type='hidden' name='name' value='{$row['id']}'>
-                                <input type='submit' class='btn btn-primary' value='Book Now'>
+                                <input type='submit' class='btn btn-lg w-100 btn-primary' value='Book Now'>
                             </form>
-                        </div>
-                        <a href='order.php' class='btn btn-warning w-100 mt-2'>Back</a>
+                     
+                        <a href='bike_listing.php' class='btn btn-secondary w-100 mt-4'>Back</a>
                     </div>
                 </div>
             </div>
@@ -148,28 +163,32 @@
            
                 <div class='col'>
 
-                    <div class='card border-2 border-black' style='width: 18rem; height:30rem;'>
+                    <div class='card border-3 border-black' style='width: 20rem; height:33rem;'>
                           
                          <img src='{$row['img1']}' class='card-img-top' alt='...'>
                         <div class='card-body '>
                             <h5 class='card-title'>{$row['title']}</h5>
-                            <div class='card-text'>
-                            <p >{$row['overview']}</p>
-                        
-                            <p ><b>Fuel Type:</b> {$row['fuel']} <b class='ms-4'>Capacity :</b>{$row['capacity']}</p>
-                            </div>
                             
+                            <p  class='card-text' >{$row['overview']}</p>
+                        
+                            <p  class='card-text'><b>Fuel Type:</b> {$row['fuel']} <b class='ms-4'>Capacity :</b>{$row['capacity']}</p>
+                            
+                            
+                          
+                          <a class='btn btn-sm btn-danger   w-100'>{$row['rent']} INR /Day</a>
                             <form method='POST' action='view.php'>
                                 <input type='hidden' name='name' value='{$row['id']}'>
-                                <input type='submit' class='my-2 btn btn-sm btn-warning w-100' value='View more details'>
+                                <input type='submit' class='my-1 btn btn-sm btn-secondary w-100' value='View more details'>
                             </form>
                             <div class='d-flex justify-content-between'>
-                            <p class='btn btn-danger  h-25'>{$row['rent']} INR /Day</p>
+                           <form method='POST' action='addtocart.php'>
+                                <input type='hidden' name='name' value='{$row['id']}'>
+                                <input type='submit' class='btn btn-warning' value='Add to cart'>
+                            </form>
                            <form method='POST' action='order.php'>
                                 <input type='hidden' name='name' value='{$row['id']}'>
                                 <input type='submit' class='btn btn-primary' value='Book Now'>
-                            </form>
-                            </div>
+                            </form> </div>
                         </div>
                     </div>
                 </div>
@@ -311,8 +330,8 @@
         <!-- Footer -->
       </div>
  
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
-</html>
+
+</html>  
 

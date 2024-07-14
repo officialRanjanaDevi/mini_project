@@ -1,5 +1,3 @@
-<?php
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,12 +35,13 @@
               <a class="nav-link" href="faqs.html">FAQs</a>
             </li>
             <li class="nav-item ms-5">
-              <a class="nav-link" href="contact_us.html">Contact us</a>
+              <a class="nav-link" href="login.html">Contact us</a>
             </li>
           </ul>
-          <button type="button" onclick="location.href = 'signup.html';" class="btn navbar-text btn-outline-light">
+          <button type="button" onclick="location.href = 'signup.html';" class="me-2 btn navbar-text btn-outline-light">
             Login/Sign Up
           </button>
+          <i class="fa fa-user-circle-o fs-4 text-light" aria-hidden="true"></i>  
         </div>
       </div>
     </nav>

@@ -1,5 +1,6 @@
 <?php
 include "authentication.php";
+include "../shared/connection.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,37 +15,46 @@ include "authentication.php";
     <link rel="Stylesheet" href="index.css" />
 </head>
 <body>
-    <nav class=" navbar navbar-expand-lg  border-body border-bottom" data-bs-theme="dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Online Bike Rental</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item ms-5">
-                <a class="nav-link" aria-current="page" href="index.html">Home</a>
-              </li>
-              <li class="nav-item ms-5">
-                <a class="nav-link" href="about_us.html">About us</a>
-              </li>
-              <li class="nav-item ms-5">
-                <a class="nav-link active" href="bike_listing.html">Bike Listing</a>
-              </li>
-              <li class="nav-item ms-5">
-                <a class="nav-link" href="faqs.html">FAQs</a>
-              </li>
-              <li class="nav-item ms-5">
-                <a class="nav-link" href="contact_us.html">Contact us</a>
-              </li>
-            </ul>
-            <button type="button" class="btn navbar-text btn-outline-dark">
-              Login/Sign Up
-            </button>
-          </div>
+<nav class="navbar  navbar-expand-lg border-body" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Online Bike Rental</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto  mb-2 mb-lg-0">
+            <li class="nav-item ms-5">
+              <a class="nav-link " aria-current="page" href="home.php">Home</a>
+            </li>
+            <li class="nav-item ms-5">
+              <a class="nav-link" href="bike_listing.php">Bike Listing</a>
+            </li>
+            <li class="nav-item ms-5">
+              <a class="nav-link active" href="rented.php">Orders</a>
+            </li>
+            <li class="nav-item ms-5">
+              <a class="nav-link" href="faqs.html">FAQs</a>
+            </li>
+            <li class="nav-item ms-5">
+              <a class="nav-link" href="contact_us.php">Contact us</a>
+            </li>
+          </ul>
+          <button type="button" onclick="location.href = 'cart.php'" class=" btn btn-outline-light border-0 ">
+          <i class="fa fa-cart-plus fs-4" aria-hidden="true"></i></button>
+          <div class="dropdown dropstart">
+  <a class=" btn btn-outline-light border-0 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <i class="fa fa-sign-out fs-4" aria-hidden="true"></i>
+  </a>
+
+  <ul class="dropdown-menu mt-4 bg-transparent border-2 border-light ms-3">
+    <li><a class="btn btn-outline-light border-0 w-100 rounded-0" href="logout.php">Log Out</a></li>
+    <li><a class="btn btn-outline-light border-0 w-100 rounded-0" href="#">Your Profile</a></li>
+  </ul>
+</div>
+<i class="fa fa-user-circle-o fs-4 text-light" aria-hidden="true"></i>  
         </div>
-      </nav>
+      </div>
+    </nav>
 
       <h2 class="text-center mt-5">My orders</h2>
       <table class="w-75 mx-auto my-5 table table-striped table-hover">
@@ -57,12 +67,12 @@ include "authentication.php";
         <th scope="col">Days</th>
         <th scope="col">Rent per day</th>
         <th scope="col">Order Status</th>
-        <th scope="col">Delete</th>
+        <th scope="col">Cancel</th>
     </tr>
 </thead>
 <tbody class="table-group-divider">
     <?php
-    include "../shared/connection.php";
+  
     $count = 1;
     $mail = $_SESSION['usermail'];  // Assuming session is already started
 
@@ -91,7 +101,7 @@ include "authentication.php";
                 <td>{$bikeRow['rent']} INR</td>
                 <td>{$orderRow['status']}</td>
                 <td>
-                    <form method='POST' action='cancel.php'>
+                    <form method='POST' action='cancel_order.php'>
                         <input type='hidden' name='id' value='{$orderRow['id']}'>
                         <input type='submit' class='btn btn-danger' value='Cancel'>
                     </form>
