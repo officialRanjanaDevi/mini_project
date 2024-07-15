@@ -11,7 +11,7 @@
 </head>
 <body>
     <!-- navbar starts -->
-    <nav class="navbar  navbar-expand-lg bg-transparent border-body" data-bs-theme="dark">
+    <nav class="navbar  navbar-expand-lg  border-body" data-bs-theme="dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Online Bike Rental</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,13 +20,13 @@
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto  mb-2 mb-lg-0">
             <li class="nav-item ms-5">
-              <a class="nav-link active" aria-current="page" href="home.php">Home</a>
+              <a class="nav-link  " aria-current="page" href="home.php">Home</a>
             </li>
             <li class="nav-item ms-5">
               <a class="nav-link" href="about_us.html">About us</a>
             </li>
             <li class="nav-item ms-5">
-              <a class="nav-link" href="bike_listing.php">Bike Listing</a>
+              <a class="nav-link active" href="bike_listing.php">Bike Listing</a>
             </li>
             <li class="nav-item ms-5">
               <a class="nav-link" href="faqs.html">FAQs</a>
@@ -76,125 +76,130 @@
     </div>
 
 
-      <!--footer  starts-->
-      <div class="border-1 border-top">
-        <!-- Footer -->
-        <footer class="text-center text-lg-start text-white " style="background-color: #000000">
-          <!-- Grid container -->
-          <div class=" p-4 pb-0">
-            <!-- Section: Links -->
-            <section class="">
-              <!--Grid row-->
-              <div class="row mx-5 px-5 ">
-                <!--Grid column-->
-                <div class="col-lg-4 col-md-6 mb-4 mb-md-0 pe-5">
-                  <h5 class="text-uppercase">FOOTER CONTENT</h5>
-    
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Molestiae modi cum ipsam ad, illo possimus laborum ut
-                    reiciendis obcaecati. Ducimus, quas. Corrupti, pariatur eaque?
-                    Reiciendis assumenda iusto sapiente inventore animi?
-                  </p>
-                </div>
-                <!--Grid column-->
-    
-    
-                <!--Grid column-->
-                <div class="col-lg-2 col-md-6 mb-4 mb-md-0 mx-5 px-5">
-                  <h5 class="text-uppercase">Links</h5>
-    
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="#!" class="text-white">Link 1</a>
-                    </li>
-                    <li>
-                      <a href="#!" class="text-white">Link 2</a>
-                    </li>
-                    <li>
-                      <a href="#!" class="text-white">Link 3</a>
-                    </li>
-                    <li>
-                      <a href="#!" class="text-white">Link 4</a>
-                    </li>
-                  </ul>
-                </div>
-                <!--Grid column-->
-    
-                <!--Grid column-->
-                <div class="col-lg-2 col-md-6 mb-4 mb-md-0 ms-5 ps-5">
-                  <h5 class="text-uppercase">Links</h5>
-    
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="#!" class="text-white">Link 1</a>
-                    </li>
-                    <li>
-                      <a href="#!" class="text-white">Link 2</a>
-                    </li>
-                    <li>
-                      <a href="#!" class="text-white">Link 3</a>
-                    </li>
-                    <li>
-                      <a href="#!" class="text-white">Link 4</a>
-                    </li>
-                  </ul>
-                </div>
-                <!--Grid column-->
+   
+  <div class=""style="background-color: #000000">
+    <!-- Footer -->
+    <footer class="py-5 text-center text-lg-start text-white " >
+
+      <div class=" p-4 pb-0 ">
+
+        <section class="">
+
+          <div class="row mx-5 px-5 ">
+
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0 pe-5">
+            <h5 class="text-uppercase">Contact us</h5>
+            <p>+91 9876543210</p>
+            <p class='lh-1'>Email us</p>
+            <p class="lh-1">mon-fri (9am to 8pm)</p>
               </div>
-              <!--Grid row-->
-            </section>
-            <!-- Section: Links -->
-    
-            <hr class="mb-4" />
-    
-            <!-- Section: CTA -->
-            <section class="">
-              <p class="d-flex justify-content-center align-items-center">
-                <span class="me-3">Register for free</span>
-                <button type="button" class="btn btn-outline-light btn-rounded">
-                  Sign up!
-                </button>
-              </p>
-            </section>
-            <!-- Section: CTA -->
-    
-            <hr class="mb-4" />
-    
-            <!-- Section: Social media -->
-            <section class="mb-4 text-center">
-              <!-- Facebook -->
-              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                  class="fab fa-facebook-f"></i></a>
-    
-              <!-- Twitter -->
-              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
-    
-              <!-- Google -->
-              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
-    
-              <!-- Instagram -->
-              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
-    
-              <!-- Linkedin -->
-              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                  class="fab fa-linkedin-in"></i></a>
-    
-              <!-- Github -->
-              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
-            </section>
-            <!-- Section: Social media -->
+            <!--Grid column-->
+
+
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mx-5 px-5">
+              <h5 class="text-uppercase">Back to</h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  
+                  <a href="home.php" class="text-white ">Home</a>
+                </li>
+                <li>
+                  <a href="bike_listing.php" class="text-white ">Bike Listing</a>
+                </li>
+                <li>
+                  <a href="login.html" class="text-white ">Login</a>
+                </li>
+                
+              </ul>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 ms-5 ps-5">
+              <h5 class="text-uppercase">Customer Service </h5>
+
+              <ul class="list-unstyled mb-0">
+              <li>
+                  <a href="about_us.html" class="text-white ">About us</a>
+                </li>
+                <li>
+                  <a href="faqs.html" class="text-white ">Faqs</a>
+                </li>
+                <li>
+                  <a href="contact_us.php" class="text-white ">Contact us</a>
+                </li>
+              
+                <li>
+                  <a href="contact_us.php" class="text-white ">Help</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
           </div>
-          <!-- Grid container -->
-    
-          <!-- Copyright -->
-          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-            © 2020 Copyright:
-            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-          </div>
-          <!-- Copyright -->
-        </footer>
-        <!-- Footer -->
+          <!--Grid row-->
+        </section>
+        <!-- Section: Links -->
+
+        
+        <hr class="my-4" />
+        
+        <section class="">
+          <p class="d-flex justify-content-center align-items-center">
+            <span class="me-3">Admin Login</span>
+            <button type="button" onclick="location.href = 'admin_login.html';" class="btn btn-outline-light btn-rounded">
+              Login Now!
+            </button>
+          </p>
+        </section>
+       <div class="d-flex justify-content-center"><h5 class=" text-uppercase text-center mx-2">Thank you for giving your time.</h5> <i class="fa fa-heart-o fs-5 mb-1" aria-hidden="true"></i> </div>
+       
+
+     <p class=' text-center'>We provide the best bike rental services in the city. Explore with ease and convenience with our well-maintained bikes and excellent customer service.</p>
+
+        <hr class="my-4" />
+
+        <!-- Section: Social media -->
+        <section class="mb-4 text-center">
+          <!-- Facebook -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+            <i class="fa fa-facebook" aria-hidden="true"></i></a>
+
+          <!-- Twitter -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+            <i class="fa fa-twitter" aria-hidden="true"></i></a>
+
+          <!-- Google -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+            <i class="fa fa-google" aria-hidden="true"></i></a>
+
+          <!-- Instagram -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+            <i class="fa fa-instagram" aria-hidden="true"></i></a>
+
+          <!-- Linkedin -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+            <i class="fa fa-linkedin" aria-hidden="true"></i></a>
+
+          <!-- Github -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+            <i class="fa fa-github" aria-hidden="true"></i></a>
+        </section>
+        
+       <div class="text-center mb-5">
+        © 2020 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+      
+        <!-- Section: Social media -->
       </div>
+      <!-- Grid container -->
+      
+    </footer>
+    <!-- Footer -->
+  </div>
+    
+
 </body>
 </html>

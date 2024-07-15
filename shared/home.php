@@ -61,8 +61,8 @@
         <rect width="100%" height="100%" fill="#f5f5f5"></rect>
 
         <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
+          <h3 class="fw-bolder fs-2 text-light">Online Bike Rental</h3>
+          <p class="text-light">Welcome to our online bike rental service .</p>
         </div>
       </div>
       <div class="carousel-item active" data-bs-interval="2000">
@@ -70,8 +70,8 @@
         <title>Placeholder</title>
         <rect width="100%" height="100%" fill="#eee"></rect></img>
         <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
+        <h3 class="fw-bolder fs-2 text-light">Online Bike Rental</h3>
+        <p class="text-light">Welcome to our online bike rental service .</p>
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="3000">
@@ -79,8 +79,8 @@
         <title>Placeholder</title>
         <rect width="100%" height="100%" fill="#e5e5e5"></rect></img>
         <div class="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>Some representative placeholder content for the third slide.</p>
+        <h3 class="fw-bolder fs-2 text-light">Online Bike Rental</h3>
+        <p class="text-light">Welcome to our online bike rental service .</p>
         </div>
       </div>
     </div>
@@ -114,8 +114,7 @@
             if($count==8){
                 break;
             }
-            echo "
-                <div class='col'>
+            echo "<div class='col'>
                     <div class='card border-2 border-black' style='width: 18rem; height:25rem;'>
                         <img src='{$row['img1']}' class='card-img-top' alt='...'>
                         <div class='card-body '>
@@ -249,9 +248,9 @@
 
 
   <!-- customer review section -->
-  <div class="customer-review mt-5 pt-5 ">
-    <div class="card mb-3 z-n1 position-absolute">
-      <img src="images/bgscooter.png" class="opacity-75 card-img-top " alt="...">
+  <div class="position-relative customer-review my-5 pt-5 ">
+    <div class=" z-n1 position-absolute w-100">
+      <img src="images/bgscooter.png" class="opacity-75  w-100 object-fit-fill" alt="...">
     </div>
     <div class="d-flex flex-column">
 
@@ -267,7 +266,7 @@
         <div class="card review mb-3" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-md-4">
-              <img src="images/review.jpg" class="img-fluid rounded-start" alt="...">
+              <img src="images/review.jpg" class="img-fluid rounded-start object-fit-fill" alt="...">
             </div>
             <div class="col-md-8">
               <div class="card-body">
@@ -311,66 +310,63 @@
   </div>
 
 
-  <div class="mt-5">
-    <!-- Footer -->
-    <footer class="text-center text-lg-start text-white " style="background-color: #000000">
 
-      <div class=" p-4 pb-0">
+  <div class=""style="background-color: #000000">
+    <!-- Footer -->
+    <footer class="py-5 text-center text-lg-start text-white " >
+
+      <div class=" p-4 pb-0 ">
 
         <section class="">
 
           <div class="row mx-5 px-5 ">
 
             <div class="col-lg-4 col-md-6 mb-4 mb-md-0 pe-5">
-              <h5 class="text-uppercase">FOOTER CONTENT</h5>
-
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Molestiae modi cum ipsam ad, illo possimus laborum ut
-                reiciendis obcaecati. Ducimus, quas. Corrupti, pariatur eaque?
-                Reiciendis assumenda iusto sapiente inventore animi?
-              </p>
-            </div>
+            <h5 class="text-uppercase">Contact us</h5>
+            <p>+91 9876543210</p>
+            <p class='lh-1'>Email us</p>
+            <p class="lh-1">mon-fri (9am to 8pm)</p>
+              </div>
             <!--Grid column-->
 
 
             <!--Grid column-->
-            <div class="col-lg-2 col-md-6 mb-4 mb-md-0 mx-5 px-5">
-              <h5 class="text-uppercase">Links</h5>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mx-5 px-5">
+              <h5 class="text-uppercase">Back to</h5>
 
               <ul class="list-unstyled mb-0">
                 <li>
-                  <a href="index.html" class="text-white">Home</a>
+                  
+                  <a href="home.php" class="text-white ">Home</a>
                 </li>
                 <li>
-                  <a href="about_us.html" class="text-white">About us</a>
+                  <a href="bike_listing.php" class="text-white ">Bike Listing</a>
                 </li>
                 <li>
-                  <a href="faqs.html" class="text-white">Faqs</a>
+                  <a href="login.html" class="text-white ">Login</a>
                 </li>
-                <li>
-                  <a href="contact_us.html" class="text-white">Contact us</a>
-                </li>
+                
               </ul>
             </div>
             <!--Grid column-->
 
             <!--Grid column-->
-            <div class="col-lg-2 col-md-6 mb-4 mb-md-0 ms-5 ps-5">
-              <h5 class="text-uppercase">Links</h5>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 ms-5 ps-5">
+              <h5 class="text-uppercase">Customer Service </h5>
 
               <ul class="list-unstyled mb-0">
-                <li>
-                  <a href="#" class="text-white">Bike Listing</a>
+              <li>
+                  <a href="about_us.html" class="text-white ">About us</a>
                 </li>
                 <li>
-                  <a href="#!" class="text-white">Orders</a>
+                  <a href="faqs.html" class="text-white ">Faqs</a>
                 </li>
                 <li>
-                  <a href="#!" class="text-white">Wishlist</a>
+                  <a href="contact_us.php" class="text-white ">Contact us</a>
                 </li>
+              
                 <li>
-                  <a href="#!" class="text-white">Help</a>
+                  <a href="contact_us.php" class="text-white ">Help</a>
                 </li>
               </ul>
             </div>
@@ -380,9 +376,9 @@
         </section>
         <!-- Section: Links -->
 
-        <hr class="mb-4" />
-
-        <!-- Section: CTA -->
+        
+        <hr class="my-4" />
+        
         <section class="">
           <p class="d-flex justify-content-center align-items-center">
             <span class="me-3">Admin Login</span>
@@ -391,9 +387,12 @@
             </button>
           </p>
         </section>
-        <!-- Section: CTA -->
+       <div class="d-flex justify-content-center"><h5 class=" text-uppercase text-center mx-2">Thank you for giving your time.</h5> <i class="fa fa-heart-o fs-5 mb-1" aria-hidden="true"></i> </div>
+       
 
-        <hr class="mb-4" />
+     <p class=' text-center'>We provide the best bike rental services in the city. Explore with ease and convenience with our well-maintained bikes and excellent customer service.</p>
+
+        <hr class="my-4" />
 
         <!-- Section: Social media -->
         <section class="mb-4 text-center">
@@ -421,22 +420,20 @@
           <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
             <i class="fa fa-github" aria-hidden="true"></i></a>
         </section>
+        
+       <div class="text-center mb-5">
+        © 2020 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+      
         <!-- Section: Social media -->
       </div>
       <!-- Grid container -->
-
-      <!-- Copyright -->
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-        © 2020 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-      </div>
-      <!-- Copyright -->
+      
     </footer>
     <!-- Footer -->
   </div>
-  <!-- End of .container -->
-
-
+    
 
 
 

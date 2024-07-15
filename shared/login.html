@@ -58,10 +58,10 @@
 
         <div class="card mx-auto my-5 w-75 h-75">
           <div class="row g-0">
-            <div class="col-md-8">
+            <div class="col-md-8 ">
               <img
                 src="images/bgimg1.jpg"
-                class="img-fluid rounded-start"
+                class="h-100 w-100 object-fit-fill mt-1 ms-1 rounded-2"
                 alt="..."
               />
             </div>
@@ -81,7 +81,7 @@
                             <i class="fa fa-envelope-o" aria-hidden="true"></i>
                            <label for="exampleInputEmail1" class="form-label">Email address  </label
                           >
-                          <input type="email" class="form-control" name="user_mail"  id="user_mail">
+                          <input type="email" class="form-control" name="user_mail"  required>
                         </td>
                       </tr>
                       <tr>
@@ -93,7 +93,7 @@
                           <input
                             type="password"
                             class="form-control"
-                            id="pass"
+                            required
                             name="pass"
                           />
                         </td>
@@ -117,68 +117,64 @@
         </div>
       </div>
     </div>
-    <div class="border-1 border-top">
+   
+
+    <div class=""style="background-color: #000000">
       <!-- Footer -->
-      <footer
-        class="text-center text-lg-start text-white"
-        style="background-color: #000000"
-      >
-        <!-- Grid container -->
-        <div class="p-4 pb-0">
-          <!-- Section: Links -->
+      <footer class="py-5 text-center text-lg-start text-white " >
+  
+        <div class=" p-4 pb-0 ">
+  
           <section class="">
-            <!--Grid row-->
-            <div class="row mx-5 px-5">
-              <!--Grid column-->
+  
+            <div class="row mx-5 px-5 ">
+  
               <div class="col-lg-4 col-md-6 mb-4 mb-md-0 pe-5">
-                <h5 class="text-uppercase">FOOTER CONTENT</h5>
-
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Molestiae modi cum ipsam ad, illo possimus laborum ut
-                  reiciendis obcaecati. Ducimus, quas. Corrupti, pariatur eaque?
-                  Reiciendis assumenda iusto sapiente inventore animi?
-                </p>
-              </div>
+              <h5 class="text-uppercase">Contact us</h5>
+              <p>+91 9876543210</p>
+              <p class='lh-1'>Email us</p>
+              <p class="lh-1">mon-fri (9am to 8pm)</p>
+                </div>
               <!--Grid column-->
-
+  
+  
               <!--Grid column-->
-              <div class="col-lg-2 col-md-6 mb-4 mb-md-0 mx-5 px-5">
-                <h5 class="text-uppercase">Links</h5>
-
+              <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mx-5 px-5">
+                <h5 class="text-uppercase">Back to</h5>
+  
                 <ul class="list-unstyled mb-0">
                   <li>
-                    <a href="#!" class="text-white">Link 1</a>
+                    
+                    <a href="home.php" class="text-white ">Home</a>
                   </li>
                   <li>
-                    <a href="#!" class="text-white">Link 2</a>
+                    <a href="bike_listing.php" class="text-white ">Bike Listing</a>
                   </li>
                   <li>
-                    <a href="#!" class="text-white">Link 3</a>
+                    <a href="login.html" class="text-white ">Login</a>
                   </li>
-                  <li>
-                    <a href="#!" class="text-white">Link 4</a>
-                  </li>
+                  
                 </ul>
               </div>
               <!--Grid column-->
-
+  
               <!--Grid column-->
-              <div class="col-lg-2 col-md-6 mb-4 mb-md-0 ms-5 ps-5">
-                <h5 class="text-uppercase">Links</h5>
-
+              <div class="col-lg-3 col-md-6 mb-4 mb-md-0 ms-5 ps-5">
+                <h5 class="text-uppercase">Customer Service </h5>
+  
                 <ul class="list-unstyled mb-0">
-                  <li>
-                    <a href="#!" class="text-white">Link 1</a>
+                <li>
+                    <a href="about_us.html" class="text-white ">About us</a>
                   </li>
                   <li>
-                    <a href="#!" class="text-white">Link 2</a>
+                    <a href="faqs.html" class="text-white ">Faqs</a>
                   </li>
                   <li>
-                    <a href="#!" class="text-white">Link 3</a>
+                    <a href="contact_us.php" class="text-white ">Contact us</a>
                   </li>
+                
                   <li>
-                    <a href="#!" class="text-white">Link 4</a>
+                    <a href="contact_us.php" class="text-white ">Help</a>
                   </li>
                 </ul>
               </div>
@@ -187,89 +183,65 @@
             <!--Grid row-->
           </section>
           <!-- Section: Links -->
-
-          <hr class="mb-4" />
-
-          <!-- Section: CTA -->
+  
+          
+          <hr class="my-4" />
+          
           <section class="">
             <p class="d-flex justify-content-center align-items-center">
-              <span class="me-3">Register for free</span>
-              <button type="button" class="btn btn-outline-light btn-rounded">
-                Sign up!
+              <span class="me-3">Admin Login</span>
+              <button type="button" onclick="location.href = 'admin_login.html';" class="btn btn-outline-light btn-rounded">
+                Login Now!
               </button>
             </p>
           </section>
-          <!-- Section: CTA -->
-
-          <hr class="mb-4" />
-
+         <div class="d-flex justify-content-center"><h5 class=" text-uppercase text-center mx-2">Thank you for giving your time.</h5> <i class="fa fa-heart-o fs-5 mb-1" aria-hidden="true"></i> </div>
+         
+  
+       <p class=' text-center'>We provide the best bike rental services in the city. Explore with ease and convenience with our well-maintained bikes and excellent customer service.</p>
+  
+          <hr class="my-4" />
+  
           <!-- Section: Social media -->
           <section class="mb-4 text-center">
             <!-- Facebook -->
-            <a
-              class="btn btn-outline-light btn-floating m-1"
-              href="#!"
-              role="button"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+              <i class="fa fa-facebook" aria-hidden="true"></i></a>
+  
             <!-- Twitter -->
-            <a
-              class="btn btn-outline-light btn-floating m-1"
-              href="#!"
-              role="button"
-              ><i class="fab fa-twitter"></i
-            ></a>
-
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+              <i class="fa fa-twitter" aria-hidden="true"></i></a>
+  
             <!-- Google -->
-            <a
-              class="btn btn-outline-light btn-floating m-1"
-              href="#!"
-              role="button"
-              ><i class="fab fa-google"></i
-            ></a>
-
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+              <i class="fa fa-google" aria-hidden="true"></i></a>
+  
             <!-- Instagram -->
-            <a
-              class="btn btn-outline-light btn-floating m-1"
-              href="#!"
-              role="button"
-              ><i class="fab fa-instagram"></i
-            ></a>
-
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+              <i class="fa fa-instagram" aria-hidden="true"></i></a>
+  
             <!-- Linkedin -->
-            <a
-              class="btn btn-outline-light btn-floating m-1"
-              href="#!"
-              role="button"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+              <i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
             <!-- Github -->
-            <a
-              class="btn btn-outline-light btn-floating m-1"
-              href="#!"
-              role="button"
-              ><i class="fab fa-github"></i
-            ></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+              <i class="fa fa-github" aria-hidden="true"></i></a>
           </section>
+          
+         <div class="text-center mb-5">
+          © 2020 Copyright:
+          <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+          </div>
+        
           <!-- Section: Social media -->
         </div>
         <!-- Grid container -->
-
-        <!-- Copyright -->
-        <div
-          class="text-center p-3"
-          style="background-color: rgba(0, 0, 0, 0.2)"
-        >
-          © 2020 Copyright:
-          <a class="text-white" href="https://mdbootstrap.com/"
-            >MDBootstrap.com</a
-          >
-        </div>
-        <!-- Copyright -->
+        
       </footer>
       <!-- Footer -->
     </div>
+      
+  
   </body>
 </html>

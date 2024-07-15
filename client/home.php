@@ -2,6 +2,7 @@
 
 include "../shared/connection.php";
 include "authentication.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,18 +45,18 @@ include "authentication.php";
             </li>
           </ul>
           <button type="button" onclick="location.href = 'cart.php'" class=" btn btn-outline-light border-0 ">
-          <i class="fa fa-cart-plus fs-4" aria-hidden="true"></i></button>
+            <i class="fa fa-cart-plus fs-4" aria-hidden="true"></i></button>
           <div class="dropdown dropstart">
-  <a class=" btn btn-outline-light border-0 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-  <i class="fa fa-sign-out fs-4" aria-hidden="true"></i>
-  </a>
+            <a class=" btn btn-outline-light border-0 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa fa-sign-out fs-4" aria-hidden="true"></i>
+            </a>
 
-  <ul class="dropdown-menu mt-4 bg-transparent border-2 border-light ms-3">
-    <li><a class="btn btn-outline-light border-0 w-100 rounded-0" href="logout.php">Log Out</a></li>
-    <li><a class="btn btn-outline-light border-0 w-100 rounded-0" href="#">Your Profile</a></li>
-  </ul>
-</div>
-<i class="fa fa-user-circle-o fs-4 text-light" aria-hidden="true"></i>  
+            <ul class="dropdown-menu mt-4 bg-transparent border-2 border-light ms-3">
+              <li><a class="btn btn-outline-light border-0 w-100 rounded-0" href="logout.php">Log Out</a></li>
+              <li><a class="btn btn-outline-light border-0 w-100 rounded-0" href="#">Your Profile</a></li>
+            </ul>
+          </div>
+          <i class="fa fa-user-circle-o fs-4 text-light" aria-hidden="true"></i>
         </div>
       </div>
     </nav>
@@ -75,8 +76,8 @@ include "authentication.php";
         <rect width="100%" height="100%" fill="#f5f5f5"></rect>
 
         <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
+        <h3 class="fw-bolder fs-2 text-light">Online Bike Rental</h3>
+        <p class="text-light">Welcome to our online bike rental service .</p>
         </div>
       </div>
       <div class="carousel-item active" data-bs-interval="2000">
@@ -84,8 +85,8 @@ include "authentication.php";
         <title>Placeholder</title>
         <rect width="100%" height="100%" fill="#eee"></rect></img>
         <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
+        <h3 class="fw-bolder fs-2 text-light">Online Bike Rental</h3>
+        <p class="text-light">Welcome to our online bike rental service .</p>
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="2000">
@@ -93,8 +94,8 @@ include "authentication.php";
         <title>Placeholder</title>
         <rect width="100%" height="100%" fill="#e5e5e5"></rect></img>
         <div class="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>Some representative placeholder content for the third slide.</p>
+        <h3 class="fw-bolder fs-2 text-light">Online Bike Rental</h3>
+        <p class="text-light">Welcome to our online bike rental service .</p>
         </div>
       </div>
     </div>
@@ -120,15 +121,15 @@ include "authentication.php";
   </div>
   <div class="border-2 ps-5 pe-5 mb-5">
     <div class="card-group">
-        <?php
-        include "../shared/connection.php";
-        $count = 1;
-        $sql_result = mysqli_query($conn, "SELECT * FROM bikes");
-        while ($row = mysqli_fetch_assoc($sql_result)) {
-            if($count==8){
-                break;
-            }
-            echo "
+      <?php
+      include "../shared/connection.php";
+      $count = 1;
+      $sql_result = mysqli_query($conn, "SELECT * FROM bikes");
+      while ($row = mysqli_fetch_assoc($sql_result)) {
+        if ($count == 8) {
+          break;
+        }
+        echo "
                 <div class='col'>
                     <div class='card border-2 border-black' style='width: 18rem; height:25rem;'>
                         <img src='{$row['img1']}' class='card-img-top' alt='...'>
@@ -143,12 +144,12 @@ include "authentication.php";
                     </div>
                 </div>
             ";
-            $count++;
-        }
-        ?>
-        
+        $count++;
+      }
+      ?>
+
     </div>
-</div>
+  </div>
 
 
 
@@ -189,7 +190,7 @@ include "authentication.php";
 
 
   <!--  additional information about site -->
-  <section class="ps-3 d-flex justify-content-center" >
+  <section class="ps-3 d-flex justify-content-center">
 
     <div class="row row-cols-2 row-cols-md-3 g-5 ms-5 ps-5">
       <div class="col gx-5 ">
@@ -264,112 +265,110 @@ include "authentication.php";
 
   <!-- customer review section -->
   <div class="position-relative customer-review mt-5 py-5 " style="opacity:0.8;height:80vh;background-image: url('images/bgscooter.png'); background-size: cover; background-position: center center;">
-  
-  <div class="d-flex flex-column">
-    <div class="mb-5 pt-1 text-light align-self-center">
-      <h2><span class="fw-bold text-center">Our Satisfied </span>customer review</h2>
-    </div>
-    <div class="d-flex justify-content-center review">
-      <div class="card review mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="images/review.jpg" class="img-fluid rounded-start" alt="...">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Ella</h5>
-              <p class="card-text">This is amazing! I mean really such great bike for rent at affordable price. oh this is crazy man!</p>
-              <i class="fa fa-star text-warning" aria-hidden="true"></i>
-              <i class="fa fa-star text-warning" aria-hidden="true"></i>
-              <i class="fa fa-star text-warning" aria-hidden="true"></i>
-              <i class="fa fa-star text-warning" aria-hidden="true"></i>
-              <i class="fa fa-star-o text-warning" aria-hidden="true"></i>
+
+    <div class="d-flex flex-column">
+      <div class="mb-5 pt-1 text-light align-self-center">
+        <h2><span class="fw-bold text-center">Our Satisfied </span>customer review</h2>
+      </div>
+      <div class="d-flex justify-content-center review">
+        <div class="card review mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="images/review.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Ella</h5>
+                <p class="card-text">This is amazing! I mean really such great bike for rent at affordable price. oh this is crazy man!</p>
+                <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                <i class="fa fa-star-o text-warning" aria-hidden="true"></i>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="card review ms-5 mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="images/review2.0.jpg" class="img-fluid rounded-start" alt="...">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Karan</h5>
-              <p class="card-text">I think this is the one and only top bike rental site in the world. 4-Stars from me - Full satisfaction, no complain at all</p>
-              <i class="fa fa-star text-warning" aria-hidden="true"></i>
-              <i class="fa fa-star text-warning" aria-hidden="true"></i>
-              <i class="fa fa-star text-warning" aria-hidden="true"></i>
-              <i class="fa fa-star text-warning" aria-hidden="true"></i>
-              <i class="fa fa-star-half-o text-warning" aria-hidden="true"></i>
+        <div class="card review ms-5 mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="images/review2.0.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Karan</h5>
+                <p class="card-text">I think this is the one and only top bike rental site in the world. 4-Stars from me - Full satisfaction, no complain at all</p>
+                <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                <i class="fa fa-star-half-o text-warning" aria-hidden="true"></i>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-  <div class="">
+   <div class=""style="background-color: #000000">
     <!-- Footer -->
-    <footer class="pt-5 text-center text-lg-start text-white " style="background-color: #000000">
+    <footer class="py-5 text-center text-lg-start text-white " >
 
-      <div class=" p-4 pb-0">
+      <div class=" p-4 pb-0 ">
 
         <section class="">
 
           <div class="row mx-5 px-5 ">
 
             <div class="col-lg-4 col-md-6 mb-4 mb-md-0 pe-5">
-              <h5 class="text-uppercase">FOOTER CONTENT</h5>
-
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Molestiae modi cum ipsam ad, illo possimus laborum ut
-                reiciendis obcaecati. Ducimus, quas. Corrupti, pariatur eaque?
-                Reiciendis assumenda iusto sapiente inventore animi?
-              </p>
-            </div>
+            <h5 class="text-uppercase">Contact us</h5>
+            <p>+91 9876543210</p>
+            <p class='lh-1'>Email us</p>
+            <p class="lh-1">mon-fri (9am to 8pm)</p>
+              </div>
             <!--Grid column-->
 
 
             <!--Grid column-->
-            <div class="col-lg-2 col-md-6 mb-4 mb-md-0 mx-5 px-5">
-              <h5 class="text-uppercase">Links</h5>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mx-5 px-5">
+              <h5 class="text-uppercase">Back to</h5>
 
               <ul class="list-unstyled mb-0">
                 <li>
-                  <a href="index.html" class="text-white">Home</a>
+                  
+                  <a href="home.php" class="text-white ">Home</a>
                 </li>
                 <li>
-                  <a href="about_us.html" class="text-white">About us</a>
+                  <a href="bike_listing.php" class="text-white ">Bike Listing</a>
                 </li>
                 <li>
-                  <a href="faqs.html" class="text-white">Faqs</a>
+                  <a href="rented.php" class="text-white ">Orders</a>
                 </li>
                 <li>
-                  <a href="contact_us.html" class="text-white">Contact us</a>
+                  <a href="cart.php" class="text-white ">Wishlist</a>
                 </li>
               </ul>
             </div>
             <!--Grid column-->
 
             <!--Grid column-->
-            <div class="col-lg-2 col-md-6 mb-4 mb-md-0 ms-5 ps-5">
-              <h5 class="text-uppercase">Links</h5>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 ms-5 ps-5">
+              <h5 class="text-uppercase">Customer Service </h5>
 
               <ul class="list-unstyled mb-0">
-                <li>
-                  <a href="#" class="text-white">Bike Listing</a>
+              <li>
+                  <a href="about_us.html" class="text-white ">About us</a>
                 </li>
                 <li>
-                  <a href="#!" class="text-white">Orders</a>
+                  <a href="faqs.html" class="text-white ">Faqs</a>
                 </li>
                 <li>
-                  <a href="#!" class="text-white">Wishlist</a>
+                  <a href="contact_us.php" class="text-white ">Contact us</a>
                 </li>
+              
                 <li>
-                  <a href="#!" class="text-white">Help</a>
+                  <a href="contact_us.php" class="text-white ">Help</a>
                 </li>
               </ul>
             </div>
@@ -379,10 +378,14 @@ include "authentication.php";
         </section>
         <!-- Section: Links -->
 
-        <hr class="mb-4" />
+        <hr class="my-4" />
+       <div class="d-flex justify-content-center"><h5 class=" text-uppercase text-center mx-2">Thank you for giving your time.</h5> <i class="fa fa-heart-o fs-5 mb-1" aria-hidden="true"></i> </div>
+       
 
+     <p class=' text-center'>We provide the best bike rental services in the city. Explore with ease and convenience with our well-maintained bikes and excellent customer service.</p>
 
-        <hr class="mb-4" />
+       <p class='text-center'>You can follow us here</p>
+        <hr class="my-4" />
 
         <!-- Section: Social media -->
         <section class="mb-4 text-center">
@@ -410,21 +413,20 @@ include "authentication.php";
           <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
             <i class="fa fa-github" aria-hidden="true"></i></a>
         </section>
+        
+       <div class="text-center mb-5">
+        © 2020 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+      
         <!-- Section: Social media -->
       </div>
       <!-- Grid container -->
-
-      <!-- Copyright -->
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-        © 2020 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-      </div>
-      <!-- Copyright -->
+      
     </footer>
     <!-- Footer -->
   </div>
-  <!-- End of .container -->
-
+    
 
 
 
@@ -433,4 +435,3 @@ include "authentication.php";
 </body>
 
 </html>
-

@@ -22,9 +22,11 @@
     <div class="card text-bg-dark">
       <img src="images/bgscooter.png" class="card-img opacity-25" alt="..." />
       <div class="card-img-overlay">
-        <div class="card" style="width: 20rem;">
-          <img src="images/24hrs.png" class="card-img-top" alt="...">
+
+        <div class="card w-50 mx-auto my-5">
+          <h5 class="card-header text-center">Login Now !</h5>
           <div class="card-body">
+          
             <form name="form" action="admin_login.php" method="POST">    
               <table class="table table-hover ">
                 <tbody>
@@ -33,7 +35,7 @@
                         <i class="fa fa-envelope-o" aria-hidden="true"></i>
                        <label for="exampleInputEmail1" class="form-label">Email address  </label
                       >
-                      <input type="email" class="form-control" name="admin_mail"  id="admin_mail">
+                      <input type="email" class="form-control" name="admin_mail"  id="admin_mail" required>
                     </td>
                   </tr>
                   <tr>
@@ -46,19 +48,20 @@
                         type="password"
                         class="form-control"
                         id="pass"
-                        name="pass"
+                        name="pass" required
                       />
                     </td>
                   </tr>
                 </tbody>
               </table> 
-              <button type="submit" class="btn btn-outline-primary rounded-5">Submit</button>
-              
+           
+              <button type="submit" class="btn ms-5 col-5 btn-outline-primary ">Submit</button>
+              <a href="home.php" class="btn col-5 ms-2 btn-outline-primary ">Back</a>
             </form>
+              
           </div>
-        </div> 
-       
-       
+        </div>
+
       </div>
     </div>
     

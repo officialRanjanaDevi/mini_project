@@ -17,39 +17,46 @@
   <div class="card text-bg-dark">
     <img src="images/bgscooter.png" class="card-img  opacity-25 " alt="...">
     <div class="card-img-overlay">
-      <!-- navbar starts -->
-    <nav class="navbar  navbar-expand-lg bg-transparent border-body" data-bs-theme="dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Online Bike Rental</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav me-auto  mb-2 mb-lg-0">
-            <li class="nav-item ms-5">
-              <a class="nav-link" aria-current="page" href="home.php">Home</a>
-            </li>
-            <li class="nav-item ms-5">
-              <a class="nav-link active" href="about_us.html">About us</a>
-            </li>
-            <li class="nav-item ms-5">
-              <a class="nav-link" href="bike_listing.php">Bike Listing</a>
-            </li>
-            <li class="nav-item ms-5">
-              <a class="nav-link" href="faqs.html">FAQs</a>
-            </li>
-            <li class="nav-item ms-5">
-              <a class="nav-link" href="login.html">Contact us</a>
-            </li>
-          </ul>
-          <button type="button" onclick="location.href = 'signup.html';" class="me-2 btn navbar-text btn-outline-light">
-            Login/Sign Up
-          </button>
-          <i class="fa fa-user-circle-o fs-4 text-light" aria-hidden="true"></i>  
-        </div>
-      </div>
-    </nav>
-    <!-- navbar ends -->
+        <nav class="navbar  navbar-expand-lg bg-transparent border-body" data-bs-theme="dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Online Bike Rental</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto  mb-2 mb-lg-0">
+                  <li class="nav-item ms-5">
+                    <a class="nav-link active" aria-current="page" href="home.php">Home</a>
+                  </li>
+                  <li class="nav-item ms-5">
+                    <a class="nav-link" href="bike_listing.php">Bike Listing</a>
+                  </li>
+                  <li class="nav-item ms-5">
+                    <a class="nav-link" href="rented.php">Orders</a>
+                  </li>
+                  <li class="nav-item ms-5">
+                    <a class="nav-link" href="faqs.html">FAQs</a>
+                  </li>
+                  <li class="nav-item ms-5">
+                    <a class="nav-link" href="contact_us.php">Contact us</a>
+                  </li>
+                </ul>
+                <button type="button" onclick="location.href = 'cart.php'" class=" btn btn-outline-light border-0 ">
+                  <i class="fa fa-cart-plus fs-4" aria-hidden="true"></i></button>
+                <div class="dropdown dropstart">
+                  <a class=" btn btn-outline-light border-0 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-sign-out fs-4" aria-hidden="true"></i>
+                  </a>
+      
+                  <ul class="dropdown-menu mt-4 bg-transparent border-2 border-light ms-3">
+                    <li><a class="btn btn-outline-light border-0 w-100 rounded-0" href="logout.php">Log Out</a></li>
+                    <li><a class="btn btn-outline-light border-0 w-100 rounded-0" href="#">Your Profile</a></li>
+                  </ul>
+                </div>
+                <i class="fa fa-user-circle-o fs-4 text-light" aria-hidden="true"></i>
+              </div>
+            </div>
+          </nav>
       <section class="about_us section-padding mt-5 pt-5 ">
         <div class="container">
           <div class="section-header  text-wrap text-center fw-medium">
@@ -104,9 +111,11 @@
                   <a href="bike_listing.php" class="text-white ">Bike Listing</a>
                 </li>
                 <li>
-                  <a href="login.html" class="text-white ">Login</a>
+                  <a href="rented.php" class="text-white ">Orders</a>
                 </li>
-                
+                <li>
+                  <a href="cart.php" class="text-white ">Wishlist</a>
+                </li>
               </ul>
             </div>
             <!--Grid column-->
@@ -137,22 +146,13 @@
         </section>
         <!-- Section: Links -->
 
-        
         <hr class="my-4" />
-        
-        <section class="">
-          <p class="d-flex justify-content-center align-items-center">
-            <span class="me-3">Admin Login</span>
-            <button type="button" onclick="location.href = 'admin_login.html';" class="btn btn-outline-light btn-rounded">
-              Login Now!
-            </button>
-          </p>
-        </section>
        <div class="d-flex justify-content-center"><h5 class=" text-uppercase text-center mx-2">Thank you for giving your time.</h5> <i class="fa fa-heart-o fs-5 mb-1" aria-hidden="true"></i> </div>
        
 
      <p class=' text-center'>We provide the best bike rental services in the city. Explore with ease and convenience with our well-maintained bikes and excellent customer service.</p>
 
+       <p class='text-center'>You can follow us here</p>
         <hr class="my-4" />
 
         <!-- Section: Social media -->
@@ -196,7 +196,9 @@
   </div>
     
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
