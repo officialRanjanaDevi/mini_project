@@ -20,7 +20,7 @@
 
 <body>
     <div class="d-flex ">
-
+ 
     
         <!-- side nav starts -->
         <div class="side_nav">
@@ -30,7 +30,7 @@
             <h2 class="text-center fs-5">Online Bike Rental</h2>
             <ul class="list-group ">
                 <li>
-                    <div class="box"><i class="fa fa-tachometer  " aria-hidden="true"></i> <a class="link-underline-opacity-0  link-light ms-1" href="admin_portal.html">DASHBOARD</a></div>
+                    <div class="box "><i class="fa fa-tachometer  " aria-hidden="true"></i> <a class="link-underline-opacity-0  link-light ms-1" href="admin_portal.html">DASHBOARD</a></div>
                 </li>
                 <li>
 
@@ -43,9 +43,9 @@
                     </div>
 
 
-                    <div class="collapse" id="Brand">
+                    <div class="" id="Brand">
                         <div class=" d-flex flex-column dropdown">
-                            <a class="link-underline-opacity-0 link-light link-opacity-75 ps-3 py-2" href="addbrand.php"> <i
+                            <a class="act link-underline-opacity-0 link-light link-opacity-75 ps-3 py-2" href="addbrand.php"> <i
                                     class="fa fa-check-square-o" aria-hidden="true"></i> Add new Brand</a>
                             <a class="link-underline-opacity-0 link-light link-opacity-75 ps-3 py-2" href="update_brand.php"> <i
                                     class="fa fa-pencil-square-o" aria-hidden="true"></i> Update Brand</a>
@@ -75,21 +75,58 @@
                     </div>
                 </li>
                 <li>
-                    <div class="box mt-3"><i class="fa fa-bookmark-o" aria-hidden="true"></i><a class="link-underline-opacity-0  link-light ms-1" href="booking.html">Manage Booking</a></div>
-                </li>
-                <li>
-                    <div class="box mt-3"><i class="fa fa-user-circle-o" aria-hidden="true"></i><a class="link-underline-opacity-0  link-light ms-1"  href="users.html">Registered Users</a></div>
-                </li>
-                <li>
-                    <div class="box mt-3"><i class="fa fa-phone-square" aria-hidden="true"></i><a class="link-underline-opacity-0  link-light ms-1"  href="contacts.html">Manage Contacts</a></div>
-                </li>
 
+                    <div class="box mt-3 position-relative" data-bs-toggle="collapse" href="#booking" role="button" aria-expanded="false" aria-controls="booking">
+                        <i class="fa fa-bookmark-o" aria-hidden="true"></i> Manage Bookings
+                        <i class="fa fa-caret-down position-absolute top-50 end-0 translate-middle-y" aria-hidden="true"></i>
+                    </div>
+                    
+                    <div class="collapse" id="booking">
+                        <div class="d-flex flex-column dropdown">
+                            <a class="link-underline-opacity-0 link-light link-opacity-75 ps-3 py-2" href="booking.php">
+                                <i class="fa fa-plus-square" aria-hidden="true"></i> New Bookings
+                            </a>
+                            <a class="link-underline-opacity-0 link-light link-opacity-75 ps-3 py-2" href="cancel_requests.php">
+                                <i class="fa fa-wrench" aria-hidden="true"></i> Cancel Requests
+                            </a>
+                            <a class="link-underline-opacity-0 link-light link-opacity-75 ps-3 py-2" href="booking_canceled.php">
+                                <i class="fa fa-times-circle" aria-hidden="true"></i> Canceled 
+                            </a>
+                        </div>
+                    </div>
+                    
+                </li>
+                <li>
+
+                    <div class="box mt-3 position-relative" data-bs-toggle="collapse" href="#contacts" role="button" aria-expanded="false" aria-controls="contacts">
+                        <i class="fa fa-address-book" aria-hidden="true"></i> Contacts
+                        <i class="fa fa-caret-down position-absolute top-50 end-0 translate-middle-y" aria-hidden="true"></i>
+                    </div>
+                    
+                    <div class="collapse" id="contacts">
+                        <div class="d-flex flex-column dropdown">
+                            <a class="link-underline-opacity-0 link-light link-opacity-75 ps-3 py-2" href="contacts.php">
+                                <i class="fa fa-plus-square" aria-hidden="true"></i> New Mails
+                            </a>
+                            <a class="link-underline-opacity-0 link-light link-opacity-75 ps-3 py-2" href="sent_mails.php">
+                                <i class="fa fa-paper-plane" aria-hidden="true"></i> Sent
+                            </a>
+                        </div>
+                    </div>
+                    
+                </li>
+              
+                <li>
+                    <div class="box mt-3"><i class="fa fa-user-circle-o" aria-hidden="true"></i><a class="link-underline-opacity-0  link-light ms-1"  href="users.php">Registered Users</a></div>
+                </li>
+              
 
 
             </ul>
 
         </div>
         <!-- side nav ends -->
+
         <div class="main_section">
             <!-- navbar -->
             <nav class="navbar bg-body-tertiary">
@@ -103,7 +140,7 @@
                                 <i class="fa fa-bars fs-4" aria-hidden="true"></i>
                             </button>
                             <ul class="dropdown-menu dropdown-menu-light">
-                                <li><a class="dropdown-item" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>
+                                <li><a class="dropdown-item" href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>
                                         Log Out</a></li>
                                 <li><a class="dropdown-item" href="#"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Change Password</a></li>
 
@@ -128,12 +165,12 @@
             <form method="post" action="add_brand.php" enctype="multipart/form-data" class="w-75 mx-auto my-5 row g-3 ">
                 <div class="col-md-4">
                     <label for="brand_name" class="form-label">Brand name</label>
-                    <input type="text" class="form-control" id="brand_name" name="brand_name">
+                    <input type="text" class="form-control" id="brand_name" name="brand_name" required>
                 </div>
 
                 <div class="col-md-4">
                     <label for="brandimg" class=""> Add logo</label>
-                    <input type="file" name="brandimg" id="brandimg" class="form-control mt-2">
+                    <input type="file" name="brandimg" id="brandimg" class="form-control mt-2" required>
                 </div>
 
                 <div class="col-md-4 mt-5">
@@ -152,13 +189,27 @@
                 <tbody class="table-group-divider">
                     <?php
                     include "../shared/connection.php";
+                 
                     $count = 1;
                     $sql_result = mysqli_query($conn, "SELECT * FROM brand");
                     while ($row = mysqli_fetch_assoc($sql_result)) {
+                        $name = $row['name'];
+
+                        // Prepare and execute the query to count bikes for the current brand
+                        $stmt = $conn->prepare("SELECT COUNT(*) AS bike_count FROM bIKES WHERE brand = ?");
+                        $stmt->bind_param("s", $name);
+                        $stmt->execute();
+                    
+                        // Get the result
+                        $sql_result_bikes = $stmt->get_result();
+                    
+                        // Fetch the count from the result
+                        $row_bikes = $sql_result_bikes->fetch_assoc();
+                        $bike_count = $row_bikes['bike_count'];
                         echo "<tr>
                     <td>{$count}</td>
                     <td>{$row['name']}</td>
-                     <td>{$row['bikes']}</td>
+                     <td>{$bike_count}</td>
                     <td><img src='{$row['logo']}' class='picture' style='width: 50px; height: 50px;'></td>
                   </tr>";
                         $count++;

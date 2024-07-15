@@ -1,5 +1,7 @@
 <?php
 include '../shared/connection.php';
+
+include "authentication.php";
 include 'template.html';
 $id = $_POST['name'];
 $stmt = $conn->prepare('SELECT * FROM bikes WHERE id = ?');
@@ -14,6 +16,7 @@ $sql_result2 = $st->get_result();
 while ($row = mysqli_fetch_assoc($sql_result)) {
     echo "
         <div class='position-absolute top-50 start-50 translate-middle w-75 ms-5'>
+        
             <form method='POST' action='editbike.php' enctype='multipart/form-data' class='ps-5 row g-3'>
                 <div class='col-md-6'>
                     <label for='vehicle_title' class='form-label'>Vehicle Title</label>
@@ -64,15 +67,15 @@ while ($row = mysqli_fetch_assoc($sql_result)) {
                 </div>
                 <div class='col-md-4'>
                     <label for='img1' class='form-label'>Image 1</label>
-                    <input type='file' name='img1' class='form-control mt-2'>
+                    <input type='file' name='img1' class='form-control mt-2' required>
                 </div>
                 <div class='col-md-4'>
                     <label for='img2' class='form-label'>Image 2</label>
-                    <input type='file' name='img2' class='form-control mt-2'>
+                    <input type='file' name='img2' class='form-control mt-2' required>
                 </div>
                 <div class='col-md-4'>
                     <label for='img3' class='form-label'>Image 3</label>
-                    <input type='file' name='img3' class='form-control mt-2'>
+                    <input type='file' name='img3' class='form-control mt-2' required>
                 </div>
 
                 <!-- accessories -->
@@ -116,10 +119,10 @@ while ($row = mysqli_fetch_assoc($sql_result)) {
                 </div>
                 
                 
-                <div class='col-12'>
+                <div class='col-12 d-flex justify-content-between'>
                  <input type='hidden' name='id' value='{$row['id']}'>
-                 <input type='submit' class='btn btn-primary' value='Update'>
-                    
+                 <input type='submit' class='col-md-4 btn btn-primary' value='Update'>
+                 <a class='btn col-md-4 btn-warning' href='update_bike.php'>Back</a>   
                 </div>
             </form>
         </div>

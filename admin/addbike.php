@@ -1,5 +1,5 @@
 <?php
-    
+
     $targetDir = "../shared/images/";
     $target1 = $targetDir . basename($_FILES['img1']['name']);
     $target2 = $targetDir . basename($_FILES['img2']['name']);

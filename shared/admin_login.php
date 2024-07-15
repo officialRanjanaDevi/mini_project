@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['login_status'] = true;
             $_SESSION['adminmail'] = $adminmail;
             echo "Login Success";
-            header("Location: ../admin/admin_portal.html");
+            header("Location: ../admin/admin.php");
         } else {
             echo "<h1>Invalid </h1>";
         }

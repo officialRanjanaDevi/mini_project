@@ -1,7 +1,6 @@
 <?php
 
 
-
 if (isset($_FILES['brandimg']) && isset($_POST['brand_name'])) {
     $target = "../shared/images/" . basename($_FILES['brandimg']['name']);
 

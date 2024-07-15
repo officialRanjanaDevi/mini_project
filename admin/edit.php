@@ -1,7 +1,7 @@
 <?php
 // Include the database connection file
 include "../shared/connection.php";
-
+include "authentication.php";
 // Check if form data and files are set
 
     $name = $_POST['brand_name'];
