@@ -36,7 +36,7 @@ include "../shared/connection.php";
             <h2 class="text-center fs-5">Online Bike Rental</h2>
             <ul class="list-group">
                 <li>
-                    <div class="box"><i class="fa fa-tachometer" aria-hidden="true"></i> <a class="link-underline-opacity-0 link-light ms-1" href="admin_portal.html">DASHBOARD</a></div>
+                    <div class="box"><i class="fa fa-tachometer" aria-hidden="true"></i> <a class="link-underline-opacity-0 link-light ms-1" href="admin_portal.php">DASHBOARD</a></div>
                 </li>
                 <li>
                     <div class="box mt-3 position-relative" data-bs-toggle="collapse" href="#Brand" role="button" aria-expanded="false" aria-controls="Brand">
@@ -134,7 +134,7 @@ include "../shared/connection.php";
             <div class="my-2 ms-4">
                 <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a class="link-underline-opacity-0 link-dark fw-bold" href="admin_portal.html">DashBoard</a></li>
+                        <li class="breadcrumb-item"><a class="link-underline-opacity-0 link-dark fw-bold" href="admin_portal.php">DashBoard</a></li>
                         <li class="breadcrumb-item fw-bold">Contacts</li>
                         <li class="breadcrumb-item fw-bold active" aria-current="page">Sent</li>
                     </ol>

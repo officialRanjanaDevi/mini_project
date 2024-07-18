@@ -47,14 +47,12 @@
       <div class="card-group">
         <?php
         include "../shared/connection.php";
-        $count = 1;
+      
         $sql_result = mysqli_query($conn, "SELECT * FROM bikes");
         while ($row = mysqli_fetch_assoc($sql_result)) {
-            if($count==8){
-                break;
-            }
+          
             echo "
-                <div class='col'>
+                <div class='col my-3'>
                     <div class='card border-2 border-black' style='width: 18rem; height:25rem;'>
                         <img src='{$row['img1']}' class='card-img-top' alt='...'>
                         <div class='card-body '>
@@ -68,7 +66,7 @@
                     </div>
                 </div>
             ";
-            $count++;
+            
         }
         ?>
         

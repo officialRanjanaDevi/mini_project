@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <div class="d-flex ">
+    <div class="d-flex position-fixed w-100">
 
       
         
@@ -32,7 +32,7 @@
             <h2 class="text-center fs-5">Online Bike Rental</h2>
             <ul class="list-group ">
                 <li>
-                    <div class="box"><i class="fa fa-tachometer  " aria-hidden="true"></i> <a class="link-underline-opacity-0  link-light ms-1" href="admin_portal.html">DASHBOARD</a></div>
+                    <div class="box"><i class="fa fa-tachometer  " aria-hidden="true"></i> <a class="link-underline-opacity-0  link-light ms-1" href="admin_portal.php">DASHBOARD</a></div>
                 </li>
                 <li>
 
@@ -157,16 +157,16 @@
             <div class="my-2 ms-4">
                 <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a class=" link-underline-opacity-0 link-dark fw-bold " href="admin_portal.html">DashBoard</a></li>
+                        <li class="breadcrumb-item"><a class=" link-underline-opacity-0 link-dark fw-bold " href="admin_portal.php">DashBoard</a></li>
                         <li class="breadcrumb-item fw-bold">Brand</li>
                         <li class="breadcrumb-item fw-bold active" aria-current="page">Update Bike</li>
                     </ol>
                 </nav>
             </div>
 
-
+            <div class="overflow-y-scroll h-50 mt-5">
             <table class="w-75 mx-auto table table-striped table-hover">
-                <thead>
+                <thead >
                     <tr>
                         <th scope="col">S.No</th>
                         <th scope="col">Title</th>
@@ -179,7 +179,7 @@
                         <th scope="col">Delete</th>
                     </tr>
                 </thead>
-                <tbody class="table-group-divider">
+                <tbody class="table-group-divider ">
                     <?php
                     include "../shared/connection.php";
                  
@@ -209,7 +209,7 @@
                     ?>
                 </tbody>
             </table>
-
+            </div>
         </div>
     </div>
 

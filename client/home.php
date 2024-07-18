@@ -1,7 +1,7 @@
 <?php
 
 include "../shared/connection.php";
-include "authentication.php";
+
 
 ?>
 <!DOCTYPE html>
@@ -71,7 +71,7 @@ include "authentication.php";
     </div>
     <div class="carousel-inner">
       <div class="carousel-item" data-bs-interval="2000">
-        <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="700" src="images/bgimg1.jpg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <img class="bd-placeholder-img bd-placeholder-img-lg h-100 d-block w-100" width="800" height="700" src="images/bgimg1.jpg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false">
         <title>Placeholder</title>
         <rect width="100%" height="100%" fill="#f5f5f5"></rect>
 
@@ -81,7 +81,7 @@ include "authentication.php";
         </div>
       </div>
       <div class="carousel-item active" data-bs-interval="2000">
-        <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="700" src="images/bgimg2.jpg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <img class="bd-placeholder-img bd-placeholder-img-lg h-100 d-block w-100" width="800" height="700" src="images/bgimg2.jpg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false">
         <title>Placeholder</title>
         <rect width="100%" height="100%" fill="#eee"></rect></img>
         <div class="carousel-caption d-none d-md-block">
@@ -90,7 +90,7 @@ include "authentication.php";
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="2000">
-        <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="700" src="images/bgimg3.jpg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <img class="bd-placeholder-img bd-placeholder-img-lg h-100 d-block w-100" width="800" height="700" src="images/bgimg3.jpg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false">
         <title>Placeholder</title>
         <rect width="100%" height="100%" fill="#e5e5e5"></rect></img>
         <div class="carousel-caption d-none d-md-block">
@@ -126,13 +126,13 @@ include "authentication.php";
       $count = 1;
       $sql_result = mysqli_query($conn, "SELECT * FROM bikes");
       while ($row = mysqli_fetch_assoc($sql_result)) {
-        if ($count == 8) {
+        if ($count == 9) {
           break;
         }
         echo "
-                <div class='col'>
+                <div class='col my-3'>
                     <div class='card border-2 border-black' style='width: 18rem; height:25rem;'>
-                        <img src='{$row['img1']}' class='card-img-top' alt='...'>
+                        <img src='{$row['img1']}' class='h-50 card-img-top' alt='...'>
                         <div class='card-body '>
                             <h5 class='card-title'>{$row['title']}</h5>
                             <p class='card-text'>{$row['overview']}</p>

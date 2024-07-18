@@ -58,7 +58,7 @@ include "authentication.php";
 
 
       <div class="container my-5 position-relative">
-      <div class="card-group">
+      <div class="row">
         <?php
         include "../shared/connection.php";
       
@@ -67,11 +67,11 @@ include "authentication.php";
            
             echo "
            
-                <div class='col'>
+                <div class='col my-3 '>
 
-                    <div class='card border-2 border-black' style='width: 18rem; height:31rem;'>
+                    <div class='card border-2 border-black' style='width: 19rem; height:32rem;'>
                           
-                         <img src='{$row['img1']}' class='card-img-top' alt='...'>
+                         <img src='{$row['img1']}' class='card-img-top h-50' alt='...'>
                         <div class='card-body '>
                             <h5 class='card-title'>{$row['title']}</h5>
                             <div class='card-text'>

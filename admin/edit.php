@@ -1,7 +1,7 @@
 <?php
 // Include the database connection file
 include "../shared/connection.php";
-include "authentication.php";
+
 // Check if form data and files are set
 
     $name = $_POST['brand_name'];
@@ -16,8 +16,8 @@ include "authentication.php";
         // Move the uploaded file to the target directory
         if (move_uploaded_file($_FILES['brand_logo']['tmp_name'], $target)) {
             // Prepare the SQL UPDATE statement
-            $stmt = $conn->prepare("UPDATE brand SET bikes = ?, logo = ? WHERE name = ?");
-            $stmt->bind_param("sss", $bikes, $target, $name);
+            $stmt = $conn->prepare("UPDATE brand SET  logo = ? WHERE name = ?");
+            $stmt->bind_param("ss", $target, $name);
             
             // Execute the statement and check for success
             if ($stmt->execute()) {

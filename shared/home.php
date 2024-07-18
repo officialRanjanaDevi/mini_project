@@ -56,7 +56,7 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item" data-bs-interval="10000">
-        <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="700" src="images/bgimg1.jpg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <img class="bd-placeholder-img bd-placeholder-img-lg d-block h-100 w-100" width="800" height="700" src="images/bgimg1.jpg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false">
         <title>Placeholder</title>
         <rect width="100%" height="100%" fill="#f5f5f5"></rect>
 
@@ -66,7 +66,7 @@
         </div>
       </div>
       <div class="carousel-item active" data-bs-interval="2000">
-        <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="700" src="images/bgimg2.jpg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <img class="bd-placeholder-img bd-placeholder-img-lg d-block h-100 w-100" width="800" height="700" src="images/bgimg2.jpg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false">
         <title>Placeholder</title>
         <rect width="100%" height="100%" fill="#eee"></rect></img>
         <div class="carousel-caption d-none d-md-block">
@@ -75,7 +75,7 @@
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="3000">
-        <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="700" src="images/bgimg3.jpg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <img class="bd-placeholder-img bd-placeholder-img-lg d-block h-100 w-100" width="800" height="700" src="images/bgimg3.jpg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false">
         <title>Placeholder</title>
         <rect width="100%" height="100%" fill="#e5e5e5"></rect></img>
         <div class="carousel-caption d-none d-md-block">
@@ -111,10 +111,10 @@
         $count = 1;
         $sql_result = mysqli_query($conn, "SELECT * FROM bikes");
         while ($row = mysqli_fetch_assoc($sql_result)) {
-            if($count==8){
+            if($count==9){
                 break;
             }
-            echo "<div class='col'>
+            echo "<div class='col my-3'>
                     <div class='card border-2 border-black' style='width: 18rem; height:25rem;'>
                         <img src='{$row['img1']}' class='card-img-top' alt='...'>
                         <div class='card-body '>

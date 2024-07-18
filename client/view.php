@@ -154,13 +154,14 @@
         $count = 1;
         $sql_result = mysqli_query($conn, "SELECT * FROM bikes");
         while ($row = mysqli_fetch_assoc($sql_result)) {
+          if($count==5){break;};
             echo "
-           
+               
                 <div class='col'>
 
                     <div class='card border-3 border-black' style='width: 20rem; height:33rem;'>
                           
-                         <img src='{$row['img1']}' class='card-img-top' alt='...'>
+                         <img src='{$row['img1']}' class='card-img-top h-50' alt='...'>
                         <div class='card-body '>
                             <h5 class='card-title'>{$row['title']}</h5>
                             
@@ -189,7 +190,7 @@
                 </div>
 
                 
-            ";
+            ";$count++;
             
         }
         ?>

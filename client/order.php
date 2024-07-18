@@ -1,7 +1,7 @@
 <?php
 include "../shared/connection.php";
 include "authentication.php";
-include "footer.html";
+
 $stmt = $conn->prepare("SELECT * FROM registered_user WHERE mail = ?");
     $stmt->bind_param("s",  $_SESSION['usermail']);
    

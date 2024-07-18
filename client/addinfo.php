@@ -21,7 +21,7 @@ $stmt->bind_param("sssssssss", $mail, $name, $address1, $address2, $contact1, $c
 
 if ($stmt->execute()) {
     
- header("location:view.php");
+ header("location:bike_listing.php");
 } else {
     echo "Signup Failed: " . $stmt->error;
 }
